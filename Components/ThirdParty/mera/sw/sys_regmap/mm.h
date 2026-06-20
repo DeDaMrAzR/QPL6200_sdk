@@ -1,0 +1,129 @@
+//Auto generated file
+#ifndef GP_MM_H
+#define GP_MM_H
+
+/**
+  * sections
+  */
+#define GP_MM_REGMAP_APB_START          0x41a00000
+#define GP_MM_REGMAP_APB_END            0x41a01000
+#define GP_MM_REGMAP_APB_SIZE           0x00001000
+#define GP_MM_REGMAP_APB_SIZE_BITS      12
+
+#define GP_MM_REGMAP_GPMEM_START          0x41000000
+#define GP_MM_REGMAP_GPMEM_END            0x41037000
+#define GP_MM_REGMAP_GPMEM_SIZE           0x00037000
+#define GP_MM_REGMAP_GPMEM_SIZE_BITS      18
+
+#define GP_MM_AKUMA_START           0x42000000
+#define GP_MM_AKUMA_END             0x42040000
+#define GP_MM_AKUMA_SIZE            0x00040000
+#define GP_MM_AKUMA_SIZE_BITS       18
+
+#define GP_MM_AKUMA_RAM_LINEAR_CODE_START           0x22000000
+#define GP_MM_AKUMA_RAM_LINEAR_CODE_END             0x22008000
+#define GP_MM_AKUMA_RAM_LINEAR_CODE_SIZE            0x00008000
+#define GP_MM_AKUMA_RAM_LINEAR_CODE_SIZE_BITS       15
+
+#define GP_MM_APPUC_RAM_START           0x20000000
+#define GP_MM_APPUC_RAM_END             0x20048000
+#define GP_MM_APPUC_RAM_SIZE            0x00048000
+#define GP_MM_APPUC_RAM_SIZE_BITS       19
+
+#define GP_MM_APPUC_RAM_0_START           0x20000000
+#define GP_MM_APPUC_RAM_0_END             0x20020000
+#define GP_MM_APPUC_RAM_0_SIZE            0x00020000
+#define GP_MM_APPUC_RAM_0_SIZE_BITS       17
+
+#define GP_MM_APPUC_RAM_1_START           0x20020000
+#define GP_MM_APPUC_RAM_1_END             0x20040000
+#define GP_MM_APPUC_RAM_1_SIZE            0x00020000
+#define GP_MM_APPUC_RAM_1_SIZE_BITS       17
+
+#define GP_MM_APPUC_RAM_2_START           0x20040000
+#define GP_MM_APPUC_RAM_2_END             0x20048000
+#define GP_MM_APPUC_RAM_2_SIZE            0x00008000
+#define GP_MM_APPUC_RAM_2_SIZE_BITS       15
+
+#define GP_MM_APPUC_RAM_ICODE_START           0x01000000
+#define GP_MM_APPUC_RAM_ICODE_END             0x01048000
+#define GP_MM_APPUC_RAM_ICODE_SIZE            0x00048000
+#define GP_MM_APPUC_RAM_ICODE_SIZE_BITS       19
+
+#define GP_MM_CMA_START           0x10000000
+#define GP_MM_CMA_END             0x10400000
+#define GP_MM_CMA_SIZE            0x00400000
+#define GP_MM_CMA_SIZE_BITS       22
+
+#define GP_MM_SE_SYSRAM_CODE_START           0x23000000
+#define GP_MM_SE_SYSRAM_CODE_END             0x23004000
+#define GP_MM_SE_SYSRAM_CODE_SIZE            0x00004000
+#define GP_MM_SE_SYSRAM_CODE_SIZE_BITS       14
+
+#define GP_MM_SECURE_ELEMENT_START           0x50000000
+#define GP_MM_SECURE_ELEMENT_END             0x50000800
+#define GP_MM_SECURE_ELEMENT_SIZE            0x00000800
+#define GP_MM_SECURE_ELEMENT_SIZE_BITS       11
+
+#define GP_MM_SYSRAM_START           0x40000000
+#define GP_MM_SYSRAM_END             0x40004000
+#define GP_MM_SYSRAM_SIZE            0x00004000
+#define GP_MM_SYSRAM_SIZE_BITS       14
+
+
+
+/**
+  * areas
+  */
+#define GP_MM_AKUMA_RAM_LINEAR_START           0x42038000
+#define GP_MM_AKUMA_RAM_LINEAR_END             0x42040000
+#define GP_MM_AKUMA_RAM_LINEAR_SIZE            0x00008000
+#define GP_MM_AKUMA_RAM_LINEAR_SIZE_BITS       15
+
+#define GP_MM_CMA_NVM_START           0x10000000
+#define GP_MM_CMA_NVM_END             0x10300000
+#define GP_MM_CMA_NVM_SIZE            0x00300000
+#define GP_MM_CMA_NVM_SIZE_BITS       22
+
+#define GP_MM_CMA_NVM_INFO_MACRO_START           0x10201000
+#define GP_MM_CMA_NVM_INFO_MACRO_END             0x10202000
+#define GP_MM_CMA_NVM_INFO_MACRO_SIZE            0x00001000
+#define GP_MM_CMA_NVM_INFO_MACRO_SIZE_BITS       12
+
+#define GP_MM_CMA_NVM_INFO_USER_START           0x10200000
+#define GP_MM_CMA_NVM_INFO_USER_END             0x10201000
+#define GP_MM_CMA_NVM_INFO_USER_SIZE            0x00001000
+#define GP_MM_CMA_NVM_INFO_USER_SIZE_BITS       12
+
+#define GP_MM_CMA_NVM_LINEAR_START           0x10000000
+#define GP_MM_CMA_NVM_LINEAR_END             0x10200000
+#define GP_MM_CMA_NVM_LINEAR_SIZE            0x00200000
+#define GP_MM_CMA_NVM_LINEAR_SIZE_BITS       21
+
+#define GP_MM_CMA_NVM_REDEN_START           0x10202000
+#define GP_MM_CMA_NVM_REDEN_END             0x10204000
+#define GP_MM_CMA_NVM_REDEN_SIZE            0x00002000
+#define GP_MM_CMA_NVM_REDEN_SIZE_BITS       13
+
+#define GP_MM_CMA_ROM_START           0x10300000
+#define GP_MM_CMA_ROM_END             0x10400000
+#define GP_MM_CMA_ROM_SIZE            0x00100000
+#define GP_MM_CMA_ROM_SIZE_BITS       20
+
+#define GP_MM_CMA_ROM_LINEAR_START           0x10300000
+#define GP_MM_CMA_ROM_LINEAR_END             0x10320000
+#define GP_MM_CMA_ROM_LINEAR_SIZE            0x00020000
+#define GP_MM_CMA_ROM_LINEAR_SIZE_BITS       17
+
+#define GP_MM_SSP_REGMAP_CIRC_WD_START           0x41033800
+#define GP_MM_SSP_REGMAP_CIRC_WD_END             0x41033c00
+#define GP_MM_SSP_REGMAP_CIRC_WD_SIZE            0x00000400
+#define GP_MM_SSP_REGMAP_CIRC_WD_SIZE_BITS       10
+
+#define GP_MM_SYSRAM_RAM_REGMAP_START           0x40000010
+#define GP_MM_SYSRAM_RAM_REGMAP_END             0x40000110
+#define GP_MM_SYSRAM_RAM_REGMAP_SIZE            0x00000100
+#define GP_MM_SYSRAM_RAM_REGMAP_SIZE_BITS       8
+
+
+#endif //GP_MM_H

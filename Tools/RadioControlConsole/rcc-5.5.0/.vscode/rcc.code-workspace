@@ -1,0 +1,52 @@
+{
+    "folders": [
+        {
+            "path": ".."
+        }
+    ],
+    "settings": {
+        "[python]": {
+            "editor.defaultFormatter": "ms-python.black-formatter",
+        },
+        "python.languageServer": "Pylance",
+        "python.analysis.typeCheckingMode": "strict",
+        "python.analysis.useLibraryCodeForTypes": false,
+        "flake8.args": [
+            "--ignore=E203,D401",
+            "--verbose",
+            "--max-line-length=120"
+        ],
+        "black-formatter.args": [
+            "--line-length",
+            "120"
+        ],
+        "isort.args": [
+            "--profile",
+            "black",
+            "--filter-files"
+        ],
+        "isort.check": true,
+        "editor.rulers": [
+            80,
+            120
+        ],
+        "pylint.args": [
+            "-rn",
+            "-sn",
+            "--max-line-length=120",
+            "--max-attributes=12",
+            "--max-args=10",
+            "--disable=missing-module-docstring,missing-class-docstring,missing-function-docstring,redefined-outer-name,too-few-public-methods",
+        ],
+        "files.exclude": {
+            "**/.git/objects/**": true,
+            "**/.git/subtree-cache/**": true,
+            "**/node_modules/*/**": true,
+            "**/*.pyc": true,
+            "**/*.log": true,
+            ".venv/": true,
+            ".mypy_cache/": true,
+        },
+        "files.trimTrailingWhitespace": true,
+    }
+}

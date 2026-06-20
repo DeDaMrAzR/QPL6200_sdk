@@ -1,0 +1,51 @@
+{
+  "name": "C/C++",
+  "id": "cpp",
+  "version": "0.0.5",
+  "description": "Feature installing everything to build C/C++ projects",
+  "options": {
+    "arm-toolchains": {
+      "type": "string",
+      "description": "The ARM toolchains to install. Format is 'toolchain1:version1,toolchain2:version2'",
+      "proposals": [
+        "arm-gnu:13.3.rel1",
+        "arm-gnu:13.3.rel1,zephyr-sdk:0.15.2",
+        "zephyr-sdk:0.15.2",
+        "zephyr-sdk:0.16.3",
+        "zephyr-sdk:0.17.0"
+      ],
+      "default": "arm-gnu:13.3.rel1"
+    },
+    "default-arm-toolchain": {
+      "type": "string",
+      "description": "The default ARM toolchain to use",
+      "proposals": [
+        "arm-gnu:13.3.rel1",
+        "arm-gnu:13.3.rel1",
+        "zephyr-sdk:0.15.2",
+        "zephyr-sdk:0.16.3",
+        "zephyr-sdk:0.17.0"
+      ],
+      "default": "arm-gnu:13.3.rel1"
+    },
+    "risc-toolchains": {
+      "type": "string",
+      "description": "The RISC-V toolchains to install. Format is 'toolchain1:version1,toolchain2:version2'",
+      "proposals": [
+        "risc-qorvo:20250120",
+        "xpack:14.2.0-3"
+      ],
+      "default": "risc-qorvo:20250120"
+    },
+    "default-risc-toolchain": {
+      "type": "string",
+      "description": "The default RISC-V toolchain to use",
+      "enum": [
+        "risc-qorvo",
+        "xpack",
+        "no-install"
+      ],
+      "default": "no-install"
+    }
+  }
+}

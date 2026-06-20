@@ -1,0 +1,52 @@
+body, html {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: linear-gradient(black, grey);
+}
+/* SVG Object captures mouse events and conflicts with the panzoom library. Temporary fix to prevent this. */
+.overlay {
+    height:0px;
+    overflow:visible;
+    pointer-events:none;
+    background:none !important;
+}
+/* set up the menu styles */
+.menu-bar {
+    display: flex;
+    justify-content: space-around;
+    background-color: black;
+    width: 100%;
+    position: absolute;
+    flex-wrap: wrap;
+    justify-content: flex-start
+}
+.menu-item {
+    font-size: 0.8rem;
+    color: white;
+    background-color: grey;
+    padding: 8px 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    flex: 1;
+    text-align: center;
+    margin: 1px;
+    flex-basis: content;
+}
+.menu-item:hover {
+    background-color: #45a049;
+}
+.menu-item.active {
+    background-color: rgb(30, 136, 44);;
+}
+/* Title text bar in top bar menu that displays info about the Layout Board */
+.flex-max {
+    flex-grow: 10;
+    text-align: left;
+    color: white;
+    padding: 5px;
+    flex-basis: 100%;
+}

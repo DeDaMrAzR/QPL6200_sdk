@@ -1,0 +1,213 @@
+#ifndef ESECURE_CMDS_HEADER
+#define ESECURE_CMDS_HEADER
+
+#define ESEC_CMD_WRAP_KEY                 0x01000000
+#define ESEC_CMD_LOAD_AR_TABLE            0x01010000
+#define ESEC_CMD_UNWRAP_KEY               0x01020000
+#define ESEC_CMD_READ_AR_TABLE            0x01030000
+#define ESEC_CMD_COMMIT_AR_TABLE          0x01040000
+#define ESEC_CMD_DELETE_KEY               0x01050000
+#define ESEC_CMD_TRANSFER_KEY             0x01060000
+
+#define ESEC_CMD_CREATE_KEY               0x02000000
+#define ESEC_CMD_READ_PUB_KEY             0x02010000
+#define ESEC_CMD_DERIVE_KEY_PBKDF2(hash_alg)        (0x02020002 | hash_alg << 8)
+#define ESEC_CMD_DERIVE_KEY_HKDF(hash_alg)          (0x02020003 | hash_alg << 8)
+#define ESEC_CMD_DERIVE_KEY_KDF2(hash_alg)          (0x02020004 | hash_alg << 8)
+#define ESEC_CMD_DERIVE_KEY_NIST(hash_alg)          (0x02020005 | hash_alg << 8)
+#define ESEC_CMD_DERIV_KEY_FROM_SEED      0x02030000
+
+#define ESEC_CMD_KEYWRAP_AES              0x02100000
+#define ESEC_CMD_KEYUNWRAP_AES            0x02110000
+#define ESEC_CMD_KEYWRAP_ECDH             0x02120000
+#define ESEC_CMD_KEYUNWRAP_ECDH           0x02130000
+#define ESEC_CMD_KEYWRAP_RSA              0x02140000
+#define ESEC_CMD_KEYUNWRAP_RSA            0x02150000
+
+#define ESEC_CMD_HASH(hash_alg)                     (0x03000000 | hash_alg << 8)
+#define ESEC_CMD_HASH_UPD(hash_alg)                 (0x03010000 | hash_alg << 8)
+#define ESEC_CMD_HMAC(hash_alg)                     (0x03020000 | hash_alg << 8)
+#define ESEC_CMD_HMAC_BEGIN(hash_alg)               (0x03020001 | hash_alg << 8)
+#define ESEC_CMD_HMAC_UPDATE(hash_alg)              (0x03020002 | hash_alg << 8)
+#define ESEC_CMD_HMAC_FINISH(hash_alg)              (0x03020003 | hash_alg << 8)
+#define ESEC_CMD_HASH_FINISH(hash_alg)              (0x03030000 | hash_alg << 8)
+
+#define ESEC_CMD_SHAKE_HASH(shake_alg)              (0x11000000 | shake_alg << 8)
+#define ESEC_CMD_SHAKE_HASH_BEGIN(shake_alg)        (0x11010000 | shake_alg << 8)
+#define ESEC_CMD_SHAKE_HASH_UPDATE(shake_alg)       (0x11020000 | shake_alg << 8)
+#define ESEC_CMD_SHAKE_HASH_FINISH(shake_alg)       (0x11030000 | shake_alg << 8)
+
+#define ESEC_CMD_ENCRYPT_AES(mode)        (0x04000000 | ((mode) & 0xFF) << 8)
+#define ESEC_CMD_ENCRYPT_ECB              0x04000100
+#define ESEC_CMD_ENCRYPT_CBC              0x04000200
+#define ESEC_CMD_ENCRYPT_CTR              0x04000300
+#define ESEC_CMD_ENCRYPT_CFB              0x04000400
+#define ESEC_CMD_ENCRYPT_OFB              0x04000500
+#define ESEC_CMD_ENCRYPT_XTS              0x04000800
+
+#define ESEC_CMD_DECRYPT_AES(mode)        (0x04010000 | ((mode) & 0xFF) << 8)
+#define ESEC_CMD_DECRYPT_ECB              0x04010100
+#define ESEC_CMD_DECRYPT_CBC              0x04010200
+#define ESEC_CMD_DECRYPT_CTR              0x04010300
+#define ESEC_CMD_DECRYPT_CFB              0x04010400
+#define ESEC_CMD_DECRYPT_OFB              0x04010500
+#define ESEC_CMD_DECRYPT_XTS              0x04010800
+
+#define ESEC_CONTEXT_SWITCHING_MASK       0x00000000F
+#define ESEC_CONTEXT_SWITCHING_WHOLE      0x000000000
+#define ESEC_CONTEXT_SWITCHING_START      0x000000001
+#define ESEC_CONTEXT_SWITCHING_END        0x000000002
+#define ESEC_CONTEXT_SWITCHING_MIDDLE     0x000000003
+
+#define ESEC_CMD_ENCRYPT_MAC_GCM          0x04020000
+#define ESEC_CMD_DECRYPT_MAC_GCM          0x04030000
+#define ESEC_CMD_GENERATE_MAC_CMAC        0x04040000
+#define ESEC_CMD_ENCRYPT_MAC_CCM          0x04050000
+#define ESEC_CMD_DECRYPT_MAC_CCM          0x04060000
+#define ESEC_CMD_VERIFY_MAC_CMAC          0x04070000
+
+#define ESEC_CMD_RSA_ENCRYPT              0x05000000
+#define ESEC_CMD_RSA_DECRYPT              0x05010000
+
+#define ESEC_CMD_SIGN(hash_alg)           (0x06000000 | hash_alg << 8)
+#define ESEC_CMD_VERIFY(hash_alg)         (0x06010000 | hash_alg << 8)
+#define ESEC_CMD_SIGN_EDDSA               0x06020000
+#define ESEC_CMD_VERIFY_EDDSA             0x06030000
+#define ESEC_CMD_SIGN_DIGEST              0x06040000
+#define ESEC_CMD_VERIFY_DIGEST            0x06050000
+
+#define ESEC_CMD_GET_RANDOM               0x07000000
+#define ESEC_CMD_READ_CLOCK               0x07020000
+#define ESEC_CMD_GEN_PRIME                0x07030000
+#define ESEC_CMD_BOOT_SUCCESS             0x07040000
+#define ESEC_CMD_REVOKE_PUB_KEY_CHIP      0x07050000
+#define ESEC_CMD_REVOKE_PUB_KEY_SYSTEM    0x07050001
+#define ESEC_CMD_HW_EXPORT_KEY            0x07060000
+#define ESEC_CMD_SET_VIRTUAL_TIME         0x07070001
+#define ESEC_CMD_GET_VIRTUAL_TIME         0x07080001
+
+#define ESEC_CMD_WRITE_OTP                0x08000000
+#define ESEC_CMD_READ_OTP                 0x08010000
+
+#define ESEC_CMD_INTEGRITY_CONFIGURE      0x09000000
+#define ESEC_CMD_INTEGRITY_UPDATE         0x09010000
+#define ESEC_CMD_INTEGRITY_VERIFY         0x09020000
+
+#define ESEC_CMD_CERTIFY_KEY              0x0A000000
+#define ESEC_CMD_CERTIFY_TIME             0x0A010000
+#define ESEC_CMD_READ_PUB_EK              0x0A020000
+#define ESEC_CMD_GET_ATTESTATION_TOKEN     0x0A030000
+#define ESEC_CMD_GET_ATTESTATION_TOKEN_LEN 0x0A040000
+
+#define ESEC_CMD_JPAKE_ROUND1_GEN         0x0B000000
+#define ESEC_CMD_JPAKE_ROUND1_VER         0x0B000100
+#define ESEC_CMD_JPAKE_ROUND2_GEN         0x0B010000
+#define ESEC_CMD_JPAKE_ROUND2_VER         0x0B010100
+#define ESEC_CMD_JPAKE_SESSION_KEY(hash_alg) (0x0B020000 | hash_alg << 8)
+
+#define ESEC_CMD_CHACHAPOL_ENC_MAC        0x0C000000
+#define ESEC_CMD_CHACHAPOL_DEC_MAC        0x0C010000
+#define ESEC_CMD_CHACHAPOL_ENCRYPT        0x0C020000
+#define ESEC_CMD_CHACHAPOL_DECRYPT        0x0C030000
+#define ESEC_CMD_CHACHAPOL_GEN_KEY_MAC    0x0C040000
+
+#define ESEC_CMD_SRP_GEN_VERIFIER(alg, ver) (0x0D010000 | alg << 8 | ver)
+#define ESEC_CMD_SRP_USER_GEN_PUB(alg, ver) (0x0D020000 | alg << 8 | ver)
+#define ESEC_CMD_SRP_HOST_GEN_PUB(alg, ver) (0x0D030000 | alg << 8 | ver)
+#define ESEC_CMD_SRP_USER_GEN_KEY(alg, ver) (0x0D040000 | alg << 8 | ver)
+#define ESEC_CMD_SRP_HOST_GEN_KEY(alg, ver) (0x0D050000 | alg << 8 | ver)
+
+#define ESEC_CMD_DIFFIE_HELLMAN           0x0E000000
+
+#define ESEC_CMD_3DES_ENCRYPT_ECB         0x10000100
+#define ESEC_CMD_3DES_DECRYPT_ECB         0x10010100
+#define ESEC_CMD_3DES_ENCRYPT_CBC         0x10000200
+#define ESEC_CMD_3DES_DECRYPT_CBC         0x10010200
+#define ESEC_CMD_3DES_CBC_MAC             0x10020000
+
+#define ESEC_CMD_SM2_SIGN                 0x12000000
+#define ESEC_CMD_SM2_VERIFY               0x12010000
+#define ESEC_CMD_SM2_KEY_EXCH_RAND        0x12020000
+#define ESEC_CMD_SM2_KEY_EXCH_GEN         0x12030000
+
+#define ESEC_CMD_ENCRYPT_SM4(mode)        (0x13000000 | ((mode) & 0xFF) << 8)
+#define ESEC_CMD_ENCRYPT_SM4_ECB          0x13000100
+#define ESEC_CMD_ENCRYPT_SM4_CBC          0x13000200
+#define ESEC_CMD_ENCRYPT_SM4_CTR          0x13000300
+#define ESEC_CMD_ENCRYPT_SM4_CFB          0x13000400
+#define ESEC_CMD_ENCRYPT_SM4_OFB          0x13000500
+
+#define ESEC_CMD_DECRYPT_SM4(mode)        (0x13010000 | ((mode) & 0xFF) << 8)
+#define ESEC_CMD_DECRYPT_SM4_ECB          0x13010100
+#define ESEC_CMD_DECRYPT_SM4_CBC          0x13010200
+#define ESEC_CMD_DECRYPT_SM4_CTR          0x13010300
+#define ESEC_CMD_DECRYPT_SM4_CFB          0x13010400
+#define ESEC_CMD_DECRYPT_SM4_OFB          0x13010500
+
+#define ESEC_CMD_ENCRYPT_SM4_GCM          0x13020000
+#define ESEC_CMD_DECRYPT_SM4_GCM          0x13030000
+
+#define ESEC_CMD_ENCRYPT_ARIA(mode)       (0x14000000 | ((mode) & 0xFF) << 8)
+#define ESEC_CMD_ENCRYPT_ARIA_ECB         0x14000100
+#define ESEC_CMD_ENCRYPT_ARIA_CBC         0x14000200
+#define ESEC_CMD_ENCRYPT_ARIA_CTR         0x14000300
+#define ESEC_CMD_ENCRYPT_ARIA_CFB         0x14000400
+#define ESEC_CMD_ENCRYPT_ARIA_OFB         0x14000500
+
+#define ESEC_CMD_DECRYPT_ARIA(mode)       (0x14010000 | ((mode) & 0xFF) << 8)
+#define ESEC_CMD_DECRYPT_ARIA_ECB         0x14010100
+#define ESEC_CMD_DECRYPT_ARIA_CBC         0x14010200
+#define ESEC_CMD_DECRYPT_ARIA_CTR         0x14010300
+#define ESEC_CMD_DECRYPT_ARIA_CFB         0x14010400
+#define ESEC_CMD_DECRYPT_ARIA_OFB         0x14010500
+
+#define ESEC_CMD_ENCRYPT_ARIA_GCM         0x14020000
+#define ESEC_CMD_DECRYPT_ARIA_GCM         0x14030000
+#define ESEC_CMD_ENCRYPT_ARIA_CCM         0x14040000
+#define ESEC_CMD_DECRYPT_ARIA_CCM         0x14050000
+#define ESEC_CMD_GENERATE_ARIA_CMAC       0x14060000
+#define ESEC_CMD_VERIFY_ARIA_CMAC         0x14070000
+
+#define ESEC_CMD_GET_MAINTENANCE_CHALLENGE 0xFD000000
+#define ESEC_CMD_DEBUG_ACCESS             0xFD010001
+#define ESEC_CMD_DISABLE_TAMPER           0xFD020001
+#define ESEC_CMD_DECOMMISSION             0xFD030001
+
+#define ESEC_CMD_READ_SERIAL_NUMBER       0xFE000000
+#define ESEC_CMD_GET_STATUS               0xFE010000
+#define ESEC_CMD_READ_CHIP_BOOT_PUBKEY    0xFE020000
+#define ESEC_CMD_READ_SYS_BOOT_PUBKEY     0xFE020001
+#define ESEC_CMD_SET_CHIP_UPGRADE_FLAG    0xFE030000
+#define ESEC_CMD_SET_SYS_UPGRADE_FLAG     0xFE030001
+
+// Custom commands
+#define ESEC_CMD_CUSTOM_VERSION                     0x43000000
+#define ESEC_CMD_CUSTOM_NVM_WRITE                   0x43030000
+#define ESEC_CMD_CUSTOM_EXTENDED_STATE              0x430F0000
+#define ESEC_CMD_CUSTOM_START_FW_UPGRADE            0x43120000
+#define ESEC_CMD_CUSTOM_RESET_REQUEST               0x43130000
+#define ESEC_CMD_CUSTOM_ECC_SECP256R1_POINT_MUL     0x43150000
+#define ESEC_CMD_CUSTOM_ECC_SECP256R1_POINT_MULADD  0x43160000
+#define ESEC_CMD_CUSTOM_GET_SM_QORVO_CONFIG         0x43170000
+#define ESEC_CMD_CUSTOM_SET_POWER_MODE              0x43180000
+#define ESEC_CMD_CUSTOM_GET_POWER_MODE              0x43190000
+#define ESEC_CMD_CUSTOM_GO_TO_SLEEP                 0x431A0000
+#define ESEC_CMD_CUSTOM_FINALIZE_WAKEUP             0x431B0000
+#define ESEC_CMD_CUSTOM_CONFIG_GPIO_WAKEUP          0x431C0000
+#define ESEC_CMD_CUSTOM_CONFIG_APPUC_RAM_RETAIN     0x431D0000
+#define ESEC_CMD_CUSTOM_PREPARE_SLEEP               0x431E0000
+#define ESEC_CMD_CUSTOM_GET_SEUCFW_VERSION          0x431F0000
+#define ESEC_CMD_CUSTOM_SET_CLK_FREQ                0x43200000
+#define ESEC_CMD_CUSTOM_XT32K_POWER_UP              0x43210000
+#define ESEC_CMD_CUSTOM_GET_PLATFORM_STATE          0x43230000
+#define ESEC_CMD_CUSTOM_STANDBY_RESET_WRITE         0x43240000
+#define EXEC_CMD_CUSTOM_GET_TAMPER_LEVELS           0x43270000
+#define EXEC_CMD_CUSTOM_SM_PROVISIONING             0x43280000
+#define EXEC_CMD_CUSTOM_CHANGE_TEMPERATURE          0x43290000
+#define EXEC_CMD_CUSTOM_CHANGE_BATTERY_VOLTAGE      0x432A0000
+#define ESEC_CMD_CUSTOM_VALIDATE_CERTIFICATE        0x432B0000
+#define ESEC_CMD_CUSTOM_WRITE_RC64K_USE_VCORE       0x432C0000
+#define ESEC_CMD_CUSTOM_NVM_ERASE                   0x432D0000
+#define ESEC_CMD_CUSTOM_NVM_WRITE_WITH_ERROR_CHECK  0x432E0000
+
+#endif

@@ -1,0 +1,99 @@
+#Generated from:
+# $(BASEDIR)/../../../Libraries/Qorvo/PersistentStorageBlock/qpg6200.py
+
+SHELL = /bin/bash
+
+ROOTDIR?=$(BASEDIR)/../../..
+ifndef BASEDIR
+BASEDIR:=$(abspath $(dir $(abspath $(lastword $(MAKEFILE_LIST)))))
+endif
+QPG_SDK_ROOT_PATH ?= $(BASEDIR)/../../../Applications/P334_GP695_DK
+WORKDIR ?= $(BASEDIR)/../../../Work/PersistentStorageBlock_qpg6200_Sec_MotionSensor
+
+
+TOOLCHAIN ?= /usr
+ifeq (,$(TOOLCHAIN))
+# Will use the path variable to find the compiler
+Q_TOOLCHAIN_PREFIX=
+else
+# Use an absolute path, add bin, path separator
+Q_TOOLCHAIN_PREFIX= $(TOOLCHAIN)/bin/
+endif
+OBJCOPY ?= $(Q_TOOLCHAIN_PREFIX)arm-none-eabi-objcopy -B armv7e-m
+AR ?= $(Q_TOOLCHAIN_PREFIX)arm-none-eabi-ar
+
+
+XML_FILE = $(BASEDIR)/../../../Libraries/Qorvo/PersistentStorageBlock/MotionSensor.psb.xml
+ifeq ("$(wildcard $(XML_FILE))","")
+$(error $(XML_FILE) config file does not exist!)
+endif
+
+
+UBISYS_TOOL_PATH ?= $(BASEDIR)/../../../Tools/DataBlock
+
+BUILD_TOOL ?= $(UBISYS_TOOL_PATH)/psbuild
+PSCONVERT ?= $(UBISYS_TOOL_PATH)/psconvert-qorvo
+DOUBLE_ENTRIES ?= $(BASEDIR)/../../../Tools/DataBlock/double_entries.py
+IMAGE_GENERATOR ?= $(BASEDIR)/../../../Tools/DataBlock/gpNvmImageTool.py
+        
+        
+        
+
+
+NBR_OF_POOLS := 3
+NBR_OF_SECTORS := 4,8,4
+
+
+GP_DATA_SECTION_START_NVM ?= 270504960
+
+APP_TARGET := PersistentStorageBlock_qpg6200_Sec_MotionSensor
+
+
+.PHONY:all
+all: $(APP_TARGET).hex
+
+.PRECIOUS: $(APP_TARGET)_gen.hex
+$(APP_TARGET)_gen.hex:
+	set -x && \
+    export QPG_SDK_ROOT=$(QPG_SDK_ROOT_PATH) && \
+	mkdir -p $(WORKDIR) && \
+	cd $(WORKDIR) && \
+    $(BUILD_TOOL) $(XML_FILE) && \
+    mv $(basename $(notdir $(XML_FILE))).hex $@
+
+
+.PRECIOUS: $(APP_TARGET).hex
+$(APP_TARGET).hex: $(APP_TARGET)_gen.hex
+	set -x && \
+	cd $(WORKDIR) && \
+    $(OBJCOPY) \
+        -I ihex -O binary \
+        $(APP_TARGET)_gen.hex $(APP_TARGET)-ubisys.bin && \
+    $(PSCONVERT) \
+        $(APP_TARGET)-ubisys.bin $(APP_TARGET)-ubisys.txt &&\
+    python3 $(DOUBLE_ENTRIES) \
+        $(APP_TARGET)-ubisys.txt $(APP_TARGET)-qorvo.txt && \
+    python3 $(IMAGE_GENERATOR) \
+        --generate \
+        --itemsin $(APP_TARGET)-qorvo.txt \
+        --nvmout $(APP_TARGET)-qorvo.bin \
+        --format subpagedflash_v2_qpg6200 \
+        --numpools $(NBR_OF_POOLS) \
+        --numsectors $(NBR_OF_SECTORS) \
+        --redundantsectors 1 && \
+    $(OBJCOPY) \
+        -I binary -O elf32-littlearm -B armv7e-m \
+        --change-section-address=.data=$(GP_DATA_SECTION_START_NVM) \
+        $(APP_TARGET)-qorvo.bin temp.elf && \
+    $(OBJCOPY) \
+        -I elf32-littlearm -O ihex \
+        temp.elf $(APP_TARGET).hex && \
+    rm temp.elf && \
+    rm $(APP_TARGET)-ubisys.txt $(APP_TARGET)-qorvo.txt && \
+    rm $(APP_TARGET)-ubisys.bin $(APP_TARGET)_gen.hex \
+
+export_prerequisites: $(APP_TARGET).hex
+
+.PHONY:clean
+clean:
+	-rm -r $(WORKDIR)

@@ -1,0 +1,134 @@
+/*
+ * Copyright (c) 2023, Qorvo Inc
+ *
+ * This software is owned by Qorvo Inc
+ * and protected under applicable copyright laws.
+ * It is delivered under the terms of the license
+ * and is intended and supplied for use solely and
+ * exclusively with products manufactured by
+ * Qorvo Inc.
+ *
+ *
+ * THIS SOFTWARE IS PROVIDED IN AN "AS IS"
+ * CONDITION. NO WARRANTIES, WHETHER EXPRESS,
+ * IMPLIED OR STATUTORY, INCLUDING, BUT NOT
+ * LIMITED TO, IMPLIED WARRANTIES OF
+ * MERCHANTABILITY AND FITNESS FOR A
+ * PARTICULAR PURPOSE APPLY TO THIS SOFTWARE.
+ * QORVO INC. SHALL NOT, IN ANY
+ * CIRCUMSTANCES, BE LIABLE FOR SPECIAL,
+ * INCIDENTAL OR CONSEQUENTIAL DAMAGES,
+ * FOR ANY REASON WHATSOEVER.
+ *
+ *
+ */
+
+#ifndef _REG_CHIP_XP4002_H_
+#define _REG_CHIP_XP4002_H_
+
+#define GP_WB_CAL_RRAM_BASE_ADDRESS GP_MM_ADDR_FROM_SYS(0x10200200)
+#define REG_CAL_RRAM_BASE_ADDRESS   GP_WB_CAL_RRAM_BASE_ADDRESS
+
+#define REG_RAM_START_ADDRESS 0x20000000UL
+
+#define REG_AKUMATRIGGERS_PRESENT           1
+#define REG_AKUMATRIGGERS_IPC_CHANNEL_COUNT 4
+
+#define REG_ES_PRESENT     1
+#define REG_ES_EVENT_COUNT 16
+
+#define REG_BISTADC_PRESENT           1
+#define REG_BISTADC_QUIC_ACTION_COUNT 3
+
+#define REG_CHIP_CLK_FREQ 32000000UL
+#define REG_CHIP_CLK_FREQ_PWR               5
+
+#define REG_DMA_PRESENT       1
+#define REG_DMA_CHANNEL_COUNT 16
+
+#define REG_DMA_DCB_PRESENT                1
+#define REG_DMA_DCB_CHANNEL_COUNT          1
+#define REG_DMA_DCB_QUIC_ACTION_SLOT_COUNT 3
+
+#define REG_FRACT_CLK_PRESENT        1
+#define REG_FRACT_CLK_INSTANCE_COUNT 2
+#define REG_FRACT_CLK_SRC_FREQUENCY  192000000UL
+#define REG_FRACT_CLK_MAX_FREQUENCY  96000000UL
+
+#define REG_GPADC_PRESENT           1
+#define REG_GPADC_SLOT_COUNT        4
+#define REG_GPADC_BUFFER_COUNT      3
+#define REG_GPADC_QUIC_ACTION_COUNT 2
+
+#define REG_GPIO_IRQ_LEVEL_COUNT            2
+#define REG_GPIO_PIN_COUNT                  30
+#define REG_GPIO_HAS_TIMESTAMP              1
+#define REG_GPIO_TIMESTAMP_COUNT            2
+#define REG_GPIO_QUIC_ACTION_COUNT          16
+
+#define REG_HRADC_PRESENT           1
+#define REG_HRADC_QUIC_ACTION_COUNT 2
+
+#define REG_IOB_PIN_COUNT      30
+
+#define REG_I2S_PRESENT        1
+#define REG_I2S_INSTANCE_COUNT 2
+
+#define REG_IR_PRESENT        1
+#define REG_IR_INSTANCE_COUNT 1
+
+#define REG_KEYPAD_PRESENT        1
+#define REG_KEYPAD_INSTANCE_COUNT 1
+
+#define REG_LED_PRESENT             1
+#define REG_LED_CHANNEL_COUNT       4
+#define REG_LED_PRESCALER_DIV_MAX   12
+#define REG_LED_SLOPE_TIME_UNIT_MAX 255
+#define REG_LED_QUIC_ACTION_COUNT   2
+
+#define REG_LPCMP_PRESENT        1
+#define REG_LPCMP_INSTANCE_COUNT 1
+#define REG_LPCMP_CHANNEL_COUNT  4
+
+#define REG_PWMXL_PRESENT           1
+#define REG_PWMXL_INSTANCE_COUNT    1
+#define REG_PWMXL_CHANNEL_COUNT     8
+#define REG_PWMXL_QUIC_ACTION_COUNT 8
+
+#define REG_RTZ_PRESENT        1
+#define REG_RTZ_HAS_DMA        1
+#define REG_RTZ_INSTANCE_COUNT 2
+
+#define REG_SPIM_PRESENT        1
+#define REG_SPIM_INSTANCE_COUNT 1
+
+#define REG_SPIS_PRESENT        1
+#define REG_SPIS_INSTANCE_COUNT 1
+
+#define REG_TWIM_PRESENT        1
+#define REG_TWIM_INSTANCE_COUNT 2
+
+#define REG_TWIS_PRESENT        1
+#define REG_TWIS_INSTANCE_COUNT 1
+
+#define REG_UART_PRESENT                    1
+#define REG_UART_INSTANCE_COUNT             3
+#define REG_UART_BAUDRATE_GENERATOR_CLOCK   REG_CHIP_CLK_FREQ
+#define REG_UART_HAS_HWFC                   1
+#define REG_UART_HAS_DMA                    0
+
+#define REG_TIMER_INPUT_CLK        REG_CHIP_CLK_FREQ
+#define REG_TIMER_PRESENT          1
+#define REG_TIMER_INSTANCE_COUNT   4
+
+#define REG_TIMERXL_PRESENT           1
+#define REG_TIMERXL_INSTANCE_COUNT    6
+#define REG_TIMERXL_CC_COUNT          4
+#define REG_TIMERXL_CLK_FREQ          REG_CHIP_CLK_FREQ
+#define REG_TIMERXL_QUIC_ACTION_COUNT 4
+
+#define REG_QUIC_PRESENT                   1
+#define REG_QUIC_CHANNEL_COUNT             16
+#define REG_QUIC_AGGREGATION_CHANNEL_COUNT 2
+
+#endif /* _REG_CHIP_XP4002_H_ */

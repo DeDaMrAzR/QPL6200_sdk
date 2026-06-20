@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<persistent-storage address="0x00000000"> <!-- address unused in Qorvo applications -->
+<alias id="zcl:temperature" value="0x0402" />
+<alias id="zcl:powerconfiguration" value="0x0001" />
+<storage address="0x00000000" storage-space="8192" page-size="512" granularity-shift="0"> <!-- address unused in Qorvo applications -->
+    <nwk:core capabilities="0x80" /> <!-- no RxOnWhenIdle -->
+    <zcl:attribute attribute="zcl:commissioning:install-code">83FED3407A939723A5C639B26916D505C3B5</zcl:attribute>
+    <zcl:attribute attribute="zcl:commissioning:short-address">0xffff</zcl:attribute>
+    <zcl:attribute attribute="zcl:commissioning:epid">0</zcl:attribute>
+    <zcl:attribute attribute="zcl:commissioning:panid">0xffff</zcl:attribute>
+    <zcl:attribute attribute="zcl:commissioning:channel-mask">0x07fff800</zcl:attribute>
+    <zcl:attribute attribute="zcl:commissioning:use-insecure-join">true</zcl:attribute>
+    <zcl:attribute attribute="zcl:commissioning:network-manager-address">0xffff</zcl:attribute>
+    <zcl:attribute attribute="zcl:commissioning:startup-control">3</zcl:attribute>
+    <zcl:reporting endpoint="1" cluster-id="zcl:temperature" attribute-id="0x0000" type="zcl:signed16" minimum-interval="30" maximum-interval="60"/>
+    <zcl:reporting endpoint="1" cluster-id="zcl:powerconfiguration" attribute-id="0x0021" type="zcl:unsigned8" minimum-interval="100" maximum-interval="600"/>
+</storage>
+</persistent-storage>

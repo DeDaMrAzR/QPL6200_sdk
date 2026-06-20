@@ -1,0 +1,16 @@
+**FreeRTOS license**
+--------------------
+
+The component(s) and/or application(s) listed below contain software
+licensed under the FreeRTOS license:
+
+- gpFreeRTOS
+
+Note: Provided within FreeRTOS sources may also include third party
+software that is not part of FreeRTOS and is licensed separately to
+FreeRTOS. Examples of third party software includes header files
+provided by chip or tools vendors, linker scripts, peripheral drivers,
+etc. All the software in subdirectories of the Components/ThirdParty/FreeRTOS
+directory is either open source or distributed with
+permission, and is free for use. For the avoidance of doubt, refer to
+the comments at the top of each source file.

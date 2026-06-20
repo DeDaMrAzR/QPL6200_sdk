@@ -1,0 +1,27 @@
+=====================
+**Important Notices**
+=====================
+
+The information contained herein is believed to be reliable; however,
+Qorvo makes no warranties regarding the information contained herein and
+assumes no responsibility or liability whatsoever for the use of the
+information contained herein. All information contained herein is
+subject to change without notice. Customers should obtain and verify the
+latest relevant information before placing orders for Qorvo products.
+The information contained herein or any use of such information does not
+grant, explicitly or implicitly, to any party any patent rights,
+licenses, or any other intellectual property rights, whether with regard
+to such information itself or anything described by such information.
+THIS INFORMATION DOES NOT CONSTITUTE A WARRANTY WITH RESPECT TO THE
+PRODUCTS DESCRIBED HEREIN, AND QORVO HEREBY DISCLAIMS ANY AND ALL
+WARRANTIES WITH RESPECT TO SUCH PRODUCTS WHETHER EXPRESS OR IMPLIED BY
+LAW, COURSE OF DEALING, COURSE OF PERFORMANCE, USAGE OF TRADE OR
+OTHERWISE, INCLUDING THE IMPLIED WARRANTIES OF MERCHANTABILITY AND
+FITNESS FOR A PARTICULAR PURPOSE. Without limiting the generality of the
+foregoing, Qorvo products are not warranted or authorized for use as
+critical components in medical, lifesaving, or life-sustaining
+applications, or other applications where a failure would reasonably be
+expected to cause severe personal injury or death.
+
+Copyright 2025 © Qorvo, Inc. \| Qorvo is a registered trademark of
+Qorvo, Inc.

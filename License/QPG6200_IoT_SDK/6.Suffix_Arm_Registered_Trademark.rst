@@ -1,0 +1,6 @@
+Trademarks
+----------
+
+Arm and Cortex are registered trademarks of Arm Limited (or its
+subsidiaries) in the US and/or elsewhere. All other product or service
+names are the property of their respective owners.

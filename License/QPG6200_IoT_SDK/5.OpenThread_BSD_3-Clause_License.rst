@@ -1,0 +1,7 @@
+**OpenThread BSD 3-Clause License**
+------------------------------------
+
+The component(s) and/or application(s) listed below contain software
+licensed under the OpenThread BSD 3-Clause license:
+
+-  OpenThread

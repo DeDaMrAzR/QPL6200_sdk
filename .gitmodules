@@ -1,0 +1,11 @@
+[submodule "Components/ThirdParty/Matter/repo"]
+	path = Components/ThirdParty/Matter/repo
+	url = https://gitlab.com/qorvo_sdk/public/stacks/matter-sdk-qorvo
+	branch = v1.4-2.0.2-branch-qorvo
+[submodule "Components/ThirdParty/OpenThread/ot-qorvo"]
+	path = Components/ThirdParty/OpenThread/ot-qorvo
+	url = https://gitlab.com/qorvo_sdk/public/stacks/ot-qorvo
+	branch = thread-1.4
+[submodule "Components/ThirdParty/FreeRTOS/repo"]
+	path = Components/ThirdParty/FreeRTOS/repo
+	url = https://github.com/FreeRTOS/FreeRTOS-Kernel.git

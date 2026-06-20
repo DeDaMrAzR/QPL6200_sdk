@@ -1,0 +1,127 @@
+---
+exclude: ^qorvo/rcc/(transport|ptc_versions|ctc_versions)
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.4.0
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-json
+      - id: check-toml
+      - id: check-added-large-files
+        args:
+          - --maxkb=5120  # 5 MB
+      - id: check-xml
+      - id: check-merge-conflict
+      - id: detect-private-key
+      - id: name-tests-test
+        args:
+          - --pytest-test-first
+  - repo: local
+    hooks:
+      - id: yamllint
+        name: yamllint
+        entry: yamllint
+        language: system
+        types:
+          - yaml
+  - repo: local
+    hooks:
+      - id: shellcheck
+        name: shellcheck
+        description: Test shell scripts with shellcheck
+        entry: shellcheck
+        language: python
+        types:
+          - shell
+  # Hadolint is not a python package, therefore not installable with pip.
+  - repo: https://github.com/hadolint/hadolint.git
+    rev: v2.1.0
+    hooks:
+      - id: hadolint-docker
+  - repo: local
+    hooks:
+      - id: ruff
+        name: ruff
+        entry: ruff
+        language: system
+        types:
+          - python
+      - id: ruff-format
+        name: ruff format
+        entry: ruff format
+        language: system
+        types:
+          - python
+  - repo: local
+    hooks:
+      - id: mypy
+        name: mypy
+        entry: mypy
+        language: system
+        types:
+          - python
+        # mypy doesn't respect the --exclude when called directly with a file
+        exclude: ^test
+  # check for PEP8 standards
+  - repo: local
+    hooks:
+      - id: pylint
+        name: pylint
+        entry: pylint
+        language: system
+        types:
+          - python
+  - repo: local
+    hooks:
+      - id: pylint
+        name: pylint for test
+        entry: pylint
+        language: system
+        types:
+          - python
+        args:
+          - -rn  # Only display messages
+          - -sn  # Don't display the score
+          - --max-line-length=120
+          - --max-attributes=12
+          - --max-args=10
+          - >
+            --disable=
+            missing-module-docstring,
+            missing-class-docstring,
+            missing-function-docstring,
+            logging-fstring-interpolation,
+            redefined-outer-name,
+            too-few-public-methods
+        files: ^test/
+  - repo: local
+    hooks:
+      - id: linter-conventional-commit
+        name: conventional pre commit
+        entry: linter-conventional-commit
+        language: system
+        stages:
+          - commit-msg
+        args:
+          - --force-refs
+  - repo: local
+    hooks:
+      - id: bandit
+        name: bandit
+        entry: bandit
+        language: system
+        args:
+          - -c
+          - pyproject.toml
+  - repo: local
+    hooks:
+      - id: namespace-protect
+        name: namespace-protect
+        entry: test
+        language: system
+        pass_filenames: false
+        args:
+          - '!'
+          - -f
+          - qorvo/__init__.py

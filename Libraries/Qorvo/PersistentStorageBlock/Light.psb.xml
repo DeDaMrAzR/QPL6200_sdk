@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?> 
+<persistent-storage address="0x00000000"> <!-- address unused in Qorvo applications -->
+<alias id="zcl:onoff" value="0x0006" />
+<alias id="zcl:level" value="0x0008" />
+<alias id="zcl:color" value="0x0300" />
+<alias id="zcl:color:currentHue" value="0x0000" />
+<alias id="zcl:color:currentSaturation" value="0x0001" />
+<alias id="zcl:color:currentX" value="0x0003" />
+<alias id="zcl:color:currentY" value="0x0004" />
+<storage address="0x00000000" storage-space="8192" page-size="512" granularity-shift="0"> <!-- address unused in Qorvo applications -->
+    <nwk:core capabilities="0x8E" />
+    <zcl:attribute attribute="zcl:commissioning:install-code">83FED3407A939723A5C639B26916D505C3B5</zcl:attribute> 
+    <zcl:attribute attribute="zcl:commissioning:short-address">0xffff</zcl:attribute> 
+    <zcl:attribute attribute="zcl:commissioning:epid">0</zcl:attribute> 
+    <zcl:attribute attribute="zcl:commissioning:panid">0xffff</zcl:attribute> 
+    <zcl:attribute attribute="zcl:commissioning:channel-mask">0x07fff800</zcl:attribute> 
+    <zcl:attribute attribute="zcl:commissioning:use-insecure-join">true</zcl:attribute> 
+    <zcl:attribute attribute="zcl:commissioning:network-manager-address">0xffff</zcl:attribute> 
+    <zcl:attribute attribute="zcl:commissioning:startup-control">3</zcl:attribute> 
+    <zcl:reporting endpoint="1" cluster-id="zcl:onoff" attribute-id="0x0000" type="zcl:bool" minimum-interval="1" maximum-interval="0"/>
+    <zcl:reporting endpoint="1" cluster-id="zcl:level" attribute-id="0x0000" type="zcl:unsigned8" minimum-interval="1" maximum-interval="0"><reportable-change>1</reportable-change></zcl:reporting>
+    <zcl:reporting endpoint="1" cluster-id="zcl:color" attribute-id="zcl:color:currentX" type="zcl:unsigned16" minimum-interval="1" maximum-interval="0"><reportable-change>1</reportable-change></zcl:reporting>
+    <zcl:reporting endpoint="1" cluster-id="zcl:color" attribute-id="zcl:color:currentY" type="zcl:unsigned16" minimum-interval="1" maximum-interval="0"><reportable-change>1</reportable-change></zcl:reporting>
+    <zcl:reporting endpoint="1" cluster-id="zcl:color" attribute-id="zcl:color:currentHue" type="zcl:unsigned8" minimum-interval="1" maximum-interval="0"><reportable-change>1</reportable-change></zcl:reporting>
+    <zcl:reporting endpoint="1" cluster-id="zcl:color" attribute-id="zcl:color:currentSaturation" type="zcl:unsigned8" minimum-interval="1" maximum-interval="0"><reportable-change>1</reportable-change></zcl:reporting>   
+    <zcl:reporting endpoint="2" cluster-id="zcl:onoff" attribute-id="0x0000" type="zcl:bool" minimum-interval="0" maximum-interval="0"/>
+    <zcl:reporting endpoint="2" cluster-id="zcl:level" attribute-id="0x0000" type="zcl:unsigned8" minimum-interval="1" maximum-interval="0"><reportable-change>1</reportable-change></zcl:reporting> 
+</storage>
+</persistent-storage> 

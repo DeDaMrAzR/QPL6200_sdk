@@ -1,0 +1,7 @@
+**LZMAFlow GCC license**
+------------------------------------
+
+The component(s) and/or application(s) listed below contain software
+licensed under the LZMAFlow GCC license:
+
+- lzma

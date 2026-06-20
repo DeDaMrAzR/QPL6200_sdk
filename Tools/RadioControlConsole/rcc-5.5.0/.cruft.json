@@ -1,0 +1,16 @@
+{
+  "template": "git@gitlab.com:qorvo/tools/templates/cruft-python-package-template.git",
+  "commit": "6162d343f621684464fd7c9c003d9ed38d3fb3a6",
+  "checkout": null,
+  "context": {
+    "cookiecutter": {
+      "team_name": "DevOps",
+      "team_email": "devops@qorvo.com",
+      "project_registry_name": "rcc",
+      "project_name": "rcc",
+      "description": "Python implementation of the Radio Control Console.",
+      "_template": "git@gitlab.com:qorvo/tools/templates/cruft-python-package-template.git"
+    }
+  },
+  "directory": null
+}

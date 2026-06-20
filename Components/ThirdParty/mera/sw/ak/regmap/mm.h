@@ -1,0 +1,71 @@
+#ifndef GP_MM_AK_H
+#define GP_MM_AK_H
+
+
+#define GP_MM_MRAM_ADDR_FROM_SYS(addr) (addr)
+#define GP_MM_MRAM_ALT_ADDR_FROM_SYS(addr) (addr)
+#define GP_MM_ROM_ADDR_FROM_SYS(addr) (addr)
+#define GP_MM_RAM_ADDR_FROM_SYS(addr) (addr)
+#define GP_MM_APB_ADDR_FROM_SYS(addr) (addr)
+#define GP_MM_RAM_BITBAND_ADDR_FROM_SYS(addr) (addr)
+#define GP_MM_WISHB_ADDR_FROM_SYS(addr) (addr)
+#define GP_MM_WISHB_BITBAND_ADDR_FROM_SYS(addr) (addr)
+
+/**
+  * sections
+  */
+
+#define GP_MM_AK_RAM_CODE_START 0x22000000
+#define GP_MM_AK_RAM_CODE_END   0x22008000
+#define GP_MM_AK_RAM_CODE_SIZE    0x8000
+
+#define GP_MM_AK_WISHB_START 0x42000000
+#define GP_MM_AK_WISHB_END   0x42020000
+#define GP_MM_AK_WISHB_SIZE   0x20000
+
+#define GP_MM_AK_APB_START 0x42020000
+#define GP_MM_AK_APB_END   0x42030000
+#define GP_MM_AK_APB_SIZE   0x10000
+
+#define GP_MM_AK_RAM_START 0x42030000
+#define GP_MM_AK_RAM_END   0x42040000
+#define GP_MM_AK_RAM_SIZE   0x10000
+
+
+/**
+ * areas
+ */
+
+#define GP_MM_AK_WISHB_SSP_CIRC_WD_START  0x42010800
+#define GP_MM_AK_WISHB_SSP_CIRC_WD_END    0x42010C00
+#define GP_MM_AK_WISHB_SSP_CIRC_WD_SIZE        0x400
+
+#define GP_MM_AK_RAM_MAGIC_WORD_START  0x42038000
+#define GP_MM_AK_RAM_MAGIC_WORD_END    0x42038004
+#define GP_MM_AK_RAM_MAGIC_WORD_SIZE          0x4
+
+#define GP_MM_AK_RAM_CRC_START  0x42038004
+#define GP_MM_AK_RAM_CRC_END    0x42038008
+#define GP_MM_AK_RAM_CRC_SIZE          0x4
+
+#define GP_MM_AK_RAM_RETENTION_START  0x42038008
+#define GP_MM_AK_RAM_RETENTION_END    0x42038200
+#define GP_MM_AK_RAM_RETENTION_SIZE        0x1F8
+
+
+/**
+ * windows
+ */
+
+#define GP_MM_AK_RAM_RAM_REGMAP_START  0x42030000
+#define GP_MM_AK_RAM_RAM_REGMAP_END    0x42030400
+#define GP_MM_AK_RAM_RAM_REGMAP_SIZE        0x400
+
+#define GP_MM_AK_RAM_LINEAR_START  0x42038000
+#define GP_MM_AK_RAM_LINEAR_END    0x42040000
+#define GP_MM_AK_RAM_LINEAR_SIZE       0x8000
+
+
+#endif //GP_MM_AK_H
+
+

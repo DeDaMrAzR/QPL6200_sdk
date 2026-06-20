@@ -1,0 +1,7 @@
+**Silex Cryptosoc**
+------------------------
+
+The component(s) and/or application(s) listed below contain software
+licensed under the Silex Cryptosoc license:
+
+- silexCryptoSoc

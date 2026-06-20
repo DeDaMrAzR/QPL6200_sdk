@@ -1,0 +1,66 @@
+<UserConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<Colors>
+		<Foreground>Yellow</Foreground>
+		<Background>Black</Background>
+	</Colors>
+	<KeyBindings>
+		<KeyBinding>
+			<Key>F1</Key>
+			<Command>CH 11</Command>
+			<!--Command>W 7</Command-->
+		</KeyBinding>
+		<KeyBinding>
+			<Key>F2</Key>
+			<Command>CH 15</Command>
+		</KeyBinding>
+		<KeyBinding>
+			<Key>F3</Key>
+			<Command>CH 20</Command>
+		</KeyBinding>
+		<KeyBinding>
+			<Key>F4</Key>
+			<Command>CH 25</Command>
+		</KeyBinding>
+		<KeyBinding>
+			<Key>F5</Key>
+			<Command>CW U</Command>
+			<Command>SetCW On</Command>
+		</KeyBinding>
+		<KeyBinding>
+			<Key>F6</Key>
+			<Command>txr 0xffff 10 5 on</Command>
+		</KeyBinding>
+		<KeyBinding>
+			<Key>F7</Key>
+			<Command>ed 30 on</Command>
+		</KeyBinding>
+		<KeyBinding>
+			<Key>F8</Key>
+			<Command>RXp Off</Command>
+			<Command>RX ON</Command>
+		</KeyBinding>
+		<KeyBinding>
+			<Key>F9</Key>
+			<Command>RXp ON</Command>
+			<Command>RX ON</Command>
+		</KeyBinding>
+		<KeyBinding>
+			<Key>F10</Key>
+			<Command>SETCW OFF</Command>
+			<Command>txr off</Command>
+			<Command>tx off</Command>
+			<Command>RX OFF</Command>
+			<Command>RXp OFF</Command>
+		</KeyBinding>
+		<KeyBinding>
+			<Key>F11</Key>
+			<Command>wr 0x02e 16</Command>
+			<Command>wr 0x0202 72</Command>
+		</KeyBinding>
+		<KeyBinding>
+			<Key>F12</Key>
+			<Command>p</Command>
+			<Command>r</Command>
+		</KeyBinding>
+	</KeyBindings>
+</UserConfiguration>

@@ -1,0 +1,3 @@
+# pyright checks for stub files if we import our package as a library
+# However, we don't create or provide stubs.
+# https://github.com/microsoft/pyright/discussions/5538

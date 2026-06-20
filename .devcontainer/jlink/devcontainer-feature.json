@@ -1,0 +1,18 @@
+{
+  "name": "J-Link",
+  "id": "jlink",
+  "version": "0.0.2",
+  "description": "Feature installing J-Link tool suite",
+  "options": {
+    "version": {
+      "type": "string",
+      "description": "The J-Link version to install",
+      "default": "8.34",
+      "proposals": [
+        "8.34",
+        "7.94h",
+        "6.98e"
+      ]
+    }
+  }
+}

@@ -1,0 +1,74 @@
+/*
+ * Copyright (c) 2024-2025, Qorvo Inc
+ *
+ * This software is owned by Qorvo Inc
+ * and protected under applicable copyright laws.
+ * It is delivered under the terms of the license
+ * and is intended and supplied for use solely and
+ * exclusively with products manufactured by
+ * Qorvo Inc.
+ *
+ *
+ * THIS SOFTWARE IS PROVIDED IN AN "AS IS"
+ * CONDITION. NO WARRANTIES, WHETHER EXPRESS,
+ * IMPLIED OR STATUTORY, INCLUDING, BUT NOT
+ * LIMITED TO, IMPLIED WARRANTIES OF
+ * MERCHANTABILITY AND FITNESS FOR A
+ * PARTICULAR PURPOSE APPLY TO THIS SOFTWARE.
+ * QORVO INC. SHALL NOT, IN ANY
+ * CIRCUMSTANCES, BE LIABLE FOR SPECIAL,
+ * INCIDENTAL OR CONSEQUENTIAL DAMAGES,
+ * FOR ANY REASON WHATSOEVER.
+ *
+ */
+
+/** @file "qPinAltMapper.h"
+ *  Alternate function mapper to GPIO for QPG6200
+ */
+
+#ifndef _PINALTMAPPER_H_
+#define _PINALTMAPPER_H_
+
+#define _LED_CHANNEL_ON_GPIO_0  0
+#define _LED_CHANNEL_ON_GPIO_1  1
+#define _LED_CHANNEL_ON_GPIO_2  2
+#define _LED_CHANNEL_ON_GPIO_3  3
+#define _LED_CHANNEL_ON_GPIO_9  3
+#define _LED_CHANNEL_ON_GPIO_10 2
+#define _LED_CHANNEL_ON_GPIO_11 1
+#define _LED_CHANNEL_ON_GPIO_12 0
+#define _LED_CHANNEL_ON_GPIO_16 1
+#define _LED_CHANNEL_ON_GPIO_17 2
+#define _LED_CHANNEL_ON_GPIO_18 3
+#define _LED_CHANNEL_ON_GPIO_21 3
+#define _LED_CHANNEL_ON_GPIO_22 0
+#define _LED_CHANNEL_ON_GPIO_23 1
+#define _LED_CHANNEL_ON_GPIO_24 2
+
+#define _PWMXL_CHANNEL_ON_GPIO_0  0
+#define _PWMXL_CHANNEL_ON_GPIO_1  1
+#define _PWMXL_CHANNEL_ON_GPIO_2  2
+#define _PWMXL_CHANNEL_ON_GPIO_3  3
+#define _PWMXL_CHANNEL_ON_GPIO_4  6
+#define _PWMXL_CHANNEL_ON_GPIO_5  7
+#define _PWMXL_CHANNEL_ON_GPIO_6  0
+#define _PWMXL_CHANNEL_ON_GPIO_7  1
+#define _PWMXL_CHANNEL_ON_GPIO_8  2
+#define _PWMXL_CHANNEL_ON_GPIO_9  3
+#define _PWMXL_CHANNEL_ON_GPIO_10 4
+#define _PWMXL_CHANNEL_ON_GPIO_11 5
+#define _PWMXL_CHANNEL_ON_GPIO_12 0
+#define _PWMXL_CHANNEL_ON_GPIO_13 1
+#define _PWMXL_CHANNEL_ON_GPIO_14 2
+#define _PWMXL_CHANNEL_ON_GPIO_15 3
+#define _PWMXL_CHANNEL_ON_GPIO_16 6
+#define _PWMXL_CHANNEL_ON_GPIO_17 7
+#define _PWMXL_CHANNEL_ON_GPIO_18 0
+#define _PWMXL_CHANNEL_ON_GPIO_19 5
+#define _PWMXL_CHANNEL_ON_GPIO_20 0
+#define _PWMXL_CHANNEL_ON_GPIO_21 7
+#define _PWMXL_CHANNEL_ON_GPIO_22 2
+#define _PWMXL_CHANNEL_ON_GPIO_23 3
+#define _PWMXL_CHANNEL_ON_GPIO_24 4
+
+#endif // _PINALTMAPPER_H_

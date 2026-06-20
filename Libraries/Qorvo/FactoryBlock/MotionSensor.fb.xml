@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<factory-block>
+<otp address="0x101FD400" erase-value="0">
+<manufacturer>Qorvo</manufacturer>
+<manufacturer-code>0x10d0</manufacturer-code>
+<model>MotionSensor</model>
+<version>1</version>
+<datecode>20200517-DE-FB1</datecode>
+<eui64>0xFFFFFFFFFFFFFFFF</eui64>
+<security-level>5</security-level>
+<power-source>3</power-source>
+<image-type>0x0005</image-type>
+<product-code type="1">0</product-code>
+<product-url>www.qorvo.com</product-url>
+<!-- Unused in Qorvo applications -->
+<cfwu address="0x00000000" size="0" />
+<ota address="0x00000000" size="0" />
+ <!-- Unused in Qorvo applications -->
+<public-key></public-key>
+<storage address="2" size="0" type="factory" />
+<storage address="1" size="0" type="working" />
+</otp>
+</factory-block>

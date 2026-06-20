@@ -1,0 +1,13 @@
+{
+  "name": "base",
+  "id": "base",
+  "version": "0.0.12",
+  "description": "A feature installing base software for devcontainers",
+  "options": {
+    "ubuntu-snapshot": {
+      "type": "string",
+      "default": "",
+      "description": "Select an Ubuntu snapshot"
+    }
+  }
+}

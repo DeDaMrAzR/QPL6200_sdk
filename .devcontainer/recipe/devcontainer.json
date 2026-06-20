@@ -1,0 +1,26 @@
+{
+    "name": "IOT SDK Dev Container: recipe",
+    "image": "ubuntu:noble",
+    "features": {
+        "../base": {
+        },
+        "../cpp": {
+            "arm-toolchains": "arm-gnu:12.2.mpacbti-rel1,arm-gnu-a:8.3-2019.03",
+            "default-arm-toolchain": "arm-gnu:12.2.mpacbti-rel1"
+        },
+        "../jlink": {
+            "version": "8.12d"
+        },
+        "../sdk": {}
+    },
+    "overrideFeatureInstallOrder": [
+        "../base",
+        "../cpp",
+        "../jlink",
+        "../sdk"
+    ],
+    "remoteUser": "devcontaineruser",
+    "onCreateCommand": [
+        "Scripts/setup_submodules.sh"
+    ]
+}

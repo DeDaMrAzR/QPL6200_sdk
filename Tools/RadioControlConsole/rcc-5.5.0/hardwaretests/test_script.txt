@@ -1,0 +1,6 @@
+# RCC example script
+AN 0
+PHY BLE
+CH 15
+TX 100 10 ON
+EXIT

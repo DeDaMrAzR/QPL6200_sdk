@@ -1,0 +1,7 @@
+**Apache 2.0**
+------------------------------------
+
+The component(s) and/or application(s) listed below contain software
+licensed under the Apache 2.0 license:
+
+-  qorvoBleHost

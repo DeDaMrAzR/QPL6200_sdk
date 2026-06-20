@@ -1,0 +1,469 @@
+#ifndef GP_WB_AK_ENUM_H
+#define GP_WB_AK_ENUM_H
+
+/***************************
+ * layout: ak_general_enum
+ ***************************/
+/* ak_standby_state  */
+#define GP_WB_ENUM_AK_STANDBY_STATE_RESET     0x0
+#define GP_WB_ENUM_AK_STANDBY_STATE_ACTIVE    0x1
+
+/* ak_ssp_mode  */
+#define GP_WB_ENUM_AK_SSP_MODE_ENCRYPT    0x0
+#define GP_WB_ENUM_AK_SSP_MODE_DECRYPT    0x1
+#define GP_WB_ENUM_AK_SSP_MODE_AES        0x2
+
+/* ak_ssp_key_len  */
+#define GP_WB_ENUM_AK_SSP_KEY_LEN_KEY_128    0x0
+#define GP_WB_ENUM_AK_SSP_KEY_LEN_KEY_192    0x1
+#define GP_WB_ENUM_AK_SSP_KEY_LEN_KEY_256    0x2
+
+/* ak_watchdog_function  */
+#define GP_WB_ENUM_AK_WATCHDOG_FUNCTION_IDLE             0x0
+#define GP_WB_ENUM_AK_WATCHDOG_FUNCTION_GEN_INTERRUPT    0x1
+#define GP_WB_ENUM_AK_WATCHDOG_FUNCTION_RESET_INT_UC     0x2
+
+/* ak_parity  */
+#define GP_WB_ENUM_AK_PARITY_EVEN    0x0
+#define GP_WB_ENUM_AK_PARITY_ODD     0x1
+#define GP_WB_ENUM_AK_PARITY_OFF     0x2
+
+/* ak_generic_io_drive  */
+#define GP_WB_ENUM_AK_GENERIC_IO_DRIVE_PUSH_PULL     0x0
+#define GP_WB_ENUM_AK_GENERIC_IO_DRIVE_OPEN_DRAIN    0x1
+
+/* ak_phy_state_transition  */
+#define GP_WB_ENUM_AK_PHY_STATE_TRANSITION_TO_OFF         0x0
+#define GP_WB_ENUM_AK_PHY_STATE_TRANSITION_TO_CAL         0x1
+#define GP_WB_ENUM_AK_PHY_STATE_TRANSITION_TO_TX          0x2
+#define GP_WB_ENUM_AK_PHY_STATE_TRANSITION_RX_TO_TX       0x3
+#define GP_WB_ENUM_AK_PHY_STATE_TRANSITION_TO_RX_AD       0x4
+#define GP_WB_ENUM_AK_PHY_STATE_TRANSITION_TO_RX_A0       0x5
+#define GP_WB_ENUM_AK_PHY_STATE_TRANSITION_TO_RX_A1       0x6
+#define GP_WB_ENUM_AK_PHY_STATE_TRANSITION_TO_DC_AD       0x7
+#define GP_WB_ENUM_AK_PHY_STATE_TRANSITION_TO_DC_A0       0x8
+#define GP_WB_ENUM_AK_PHY_STATE_TRANSITION_TO_DC_A1       0x9
+#define GP_WB_ENUM_AK_PHY_STATE_TRANSITION_TO_RX_DF       0xA
+#define GP_WB_ENUM_AK_PHY_STATE_TRANSITION_TO_DC_DF       0xB
+#define GP_WB_ENUM_AK_PHY_STATE_TRANSITION_RESERVED_12    0xC
+#define GP_WB_ENUM_AK_PHY_STATE_TRANSITION_RESERVED_13    0xD
+#define GP_WB_ENUM_AK_PHY_STATE_TRANSITION_RESERVED_14    0xE
+#define GP_WB_ENUM_AK_PHY_STATE_TRANSITION_RESERVED_15    0xF
+
+/* ak_dma_scb_trigger_src_select  */
+#define GP_WB_ENUM_AK_DMA_SCB_TRIGGER_SRC_SELECT_NO_TRIGGER_SRC                 0x0
+#define GP_WB_ENUM_AK_DMA_SCB_TRIGGER_SRC_SELECT_UART_0_TX_NOT_FULL             0x1
+#define GP_WB_ENUM_AK_DMA_SCB_TRIGGER_SRC_SELECT_UART_0_RX_NOT_EMPTY            0x2
+#define GP_WB_ENUM_AK_DMA_SCB_TRIGGER_SRC_SELECT_AOA_AOD_NOT_EMPTY              0x3
+#define GP_WB_ENUM_AK_DMA_SCB_TRIGGER_SRC_SELECT_AOA_AOD_RX_ANT_NOT_FULL        0x4
+#define GP_WB_ENUM_AK_DMA_SCB_TRIGGER_SRC_SELECT_AOA_AOD_TX_ANT_NOT_FULL        0x5
+#define GP_WB_ENUM_AK_DMA_SCB_TRIGGER_SRC_SELECT_PAT_BUFFER_NOT_FULL            0x6
+#define GP_WB_ENUM_AK_DMA_SCB_TRIGGER_SRC_SELECT_PAR_BUFFER_NOT_EMPTY           0x7
+#define GP_WB_ENUM_AK_DMA_SCB_TRIGGER_SRC_SELECT_PBR0_SFIFO_NOT_EMPTY           0x8
+#define GP_WB_ENUM_AK_DMA_SCB_TRIGGER_SRC_SELECT_PBR1_SFIFO_NOT_EMPTY           0x9
+#define GP_WB_ENUM_AK_DMA_SCB_TRIGGER_SRC_SELECT_IQ_LOGGER_SFIFO_0_NOT_EMPTY    0xA
+#define GP_WB_ENUM_AK_DMA_SCB_TRIGGER_SRC_SELECT_IQ_LOGGER_SFIFO_1_NOT_EMPTY    0xB
+
+/* ak_dma_scb_word_mode  */
+#define GP_WB_ENUM_AK_DMA_SCB_WORD_MODE_DATA8BIT     0x0
+#define GP_WB_ENUM_AK_DMA_SCB_WORD_MODE_DATA16BIT    0x1
+#define GP_WB_ENUM_AK_DMA_SCB_WORD_MODE_DATA32BIT    0x2
+
+/* ak_dma_scb_buffer_complete_mode  */
+#define GP_WB_ENUM_AK_DMA_SCB_BUFFER_COMPLETE_MODE_ERROR_MODE     0x0
+#define GP_WB_ENUM_AK_DMA_SCB_BUFFER_COMPLETE_MODE_STATUS_MODE    0x1
+
+/* ak_dma_dcb_word_mode  */
+#define GP_WB_ENUM_AK_DMA_DCB_WORD_MODE_DATA8BIT     0x0
+#define GP_WB_ENUM_AK_DMA_DCB_WORD_MODE_DATA16BIT    0x1
+#define GP_WB_ENUM_AK_DMA_DCB_WORD_MODE_DATA32BIT    0x2
+
+/* ak_antsel_int  */
+#define GP_WB_ENUM_AK_ANTSEL_INT_USE_PORT_FROM_DESIGN    0x0
+#define GP_WB_ENUM_AK_ANTSEL_INT_USE_PORT_0              0x1
+#define GP_WB_ENUM_AK_ANTSEL_INT_USE_PORT_1              0x2
+
+/* ak_antsel_ext  */
+#define GP_WB_ENUM_AK_ANTSEL_EXT_USE_PORT_FROM_DESIGN    0x0
+#define GP_WB_ENUM_AK_ANTSEL_EXT_USE_EXT_PORT_0          0x1
+#define GP_WB_ENUM_AK_ANTSEL_EXT_USE_EXT_PORT_1          0x2
+
+/* ak_pa_slope  */
+#define GP_WB_ENUM_AK_PA_SLOPE_RAMP_8US      0x0
+#define GP_WB_ENUM_AK_PA_SLOPE_RAMP_4US      0x1
+#define GP_WB_ENUM_AK_PA_SLOPE_RAMP_2US      0x2
+#define GP_WB_ENUM_AK_PA_SLOPE_RAMP_1US      0x3
+#define GP_WB_ENUM_AK_PA_SLOPE_RAMP_500NS    0x4
+#define GP_WB_ENUM_AK_PA_SLOPE_RAMP_250NS    0x5
+#define GP_WB_ENUM_AK_PA_SLOPE_RAMP_125NS    0x6
+#define GP_WB_ENUM_AK_PA_SLOPE_IMMEDIATE     0x7
+
+/* ak_circular_buffer  */
+#define GP_WB_ENUM_AK_CIRCULAR_BUFFER_SRC_BUFFER     0x0
+#define GP_WB_ENUM_AK_CIRCULAR_BUFFER_DEST_BUFFER    0x1
+
+#ifdef GP_DIGITAL_COEX
+/* ak_coex_sw_overrule_type  */
+/* Always map COEX request and prio to TRC coex output */
+#define GP_WB_ENUM_AK_COEX_SW_OVERRULE_TYPE_TRC_ALWAYS     0x0
+/* Always map COEX request and prio to SW coex option */
+#define GP_WB_ENUM_AK_COEX_SW_OVERRULE_TYPE_SW_ALWAYS      0x1
+/* SW options will override TRC if TRC is not requesting or TRC priority is lower than SW priority */
+#define GP_WB_ENUM_AK_COEX_SW_OVERRULE_TYPE_TRC_PRIO       0x2
+/* SW options will override TRC if TRC is not requesting */
+#define GP_WB_ENUM_AK_COEX_SW_OVERRULE_TYPE_TRC_REQUEST    0x3
+
+#endif //GP_DIGITAL_COEX
+/* ak_rxnb_rfcalgen_mod_clk_freq  */
+#define GP_WB_ENUM_AK_RXNB_RFCALGEN_MOD_CLK_FREQ_K62_5    0x0
+#define GP_WB_ENUM_AK_RXNB_RFCALGEN_MOD_CLK_FREQ_K125     0x1
+#define GP_WB_ENUM_AK_RXNB_RFCALGEN_MOD_CLK_FREQ_K250     0x2
+#define GP_WB_ENUM_AK_RXNB_RFCALGEN_MOD_CLK_FREQ_K500     0x3
+#define GP_WB_ENUM_AK_RXNB_RFCALGEN_MOD_CLK_FREQ_M1       0x4
+#define GP_WB_ENUM_AK_RXNB_RFCALGEN_MOD_CLK_FREQ_M2       0x5
+#define GP_WB_ENUM_AK_RXNB_RFCALGEN_MOD_CLK_FREQ_M4       0x6
+#define GP_WB_ENUM_AK_RXNB_RFCALGEN_MOD_CLK_FREQ_M8       0x7
+#define GP_WB_ENUM_AK_RXNB_RFCALGEN_MOD_CLK_FREQ_M16      0x8
+
+/* ak_ipc_action  */
+#define GP_WB_ENUM_AK_IPC_ACTION_NONE    0x0
+#define GP_WB_ENUM_AK_IPC_ACTION_SET     0x1
+
+/* ak_obm_state  */
+#define GP_WB_ENUM_AK_OBM_STATE_IDLE                    0x0
+#define GP_WB_ENUM_AK_OBM_STATE_RESYNC_INIT0            0x1
+#define GP_WB_ENUM_AK_OBM_STATE_RESYNC_INIT1            0x2
+#define GP_WB_ENUM_AK_OBM_STATE_RESYNC_INIT2            0x3
+#define GP_WB_ENUM_AK_OBM_STATE_SEARCHING_FIRST_EDGE    0x4
+#define GP_WB_ENUM_AK_OBM_STATE_MEASURING               0x5
+
+/***************************
+ * layout: ak_phy_enum
+ ***************************/
+/* ak_lff_int_coupling_factor  */
+#define GP_WB_ENUM_AK_LFF_INT_COUPLING_FACTOR_LFF_CF_64     0x0
+#define GP_WB_ENUM_AK_LFF_INT_COUPLING_FACTOR_LFF_CF_128    0x1
+#define GP_WB_ENUM_AK_LFF_INT_COUPLING_FACTOR_LFF_CF_256    0x2
+#define GP_WB_ENUM_AK_LFF_INT_COUPLING_FACTOR_LFF_CF_512    0x3
+
+/* ak_phy_state  */
+#define GP_WB_ENUM_AK_PHY_STATE_TRX_OFF    0x0
+#define GP_WB_ENUM_AK_PHY_STATE_RX_ON      0x1
+#define GP_WB_ENUM_AK_PHY_STATE_TX_ON      0x2
+#define GP_WB_ENUM_AK_PHY_STATE_CAL        0x3
+
+/* ak_rssi_offset_sel  */
+#define GP_WB_ENUM_AK_RSSI_OFFSET_SEL_RSSI_OFFSET_A    0x0
+#define GP_WB_ENUM_AK_RSSI_OFFSET_SEL_RSSI_OFFSET_B    0x1
+
+/* ak_multi_std_mode  */
+/* BLE is disabled */
+#define GP_WB_ENUM_AK_MULTI_STD_MODE_ZB_ONLY              0x0
+/* ZB is disabled */
+#define GP_WB_ENUM_AK_MULTI_STD_MODE_BLE_ONLY             0x1
+/* Both zigbee and bluetooth are enabled, but zb will be activated if rx is requested for both */
+#define GP_WB_ENUM_AK_MULTI_STD_MODE_ZB_PRIORITY          0x2
+/* Both zigbee and bluetooth are enabled, but ble will be activated if rx is requested for both */
+#define GP_WB_ENUM_AK_MULTI_STD_MODE_BLE_PRIORITY         0x3
+/* Used when in multistandart listening mode and both zigbee an ble enabled */
+#define GP_WB_ENUM_AK_MULTI_STD_MODE_ZB_BLE_CONCURRENT    0x4
+
+/* ak_receiver_mode  */
+#define GP_WB_ENUM_AK_RECEIVER_MODE_LPL               0x0
+#define GP_WB_ENUM_AK_RECEIVER_MODE_LPL_AD            0x1
+#define GP_WB_ENUM_AK_RECEIVER_MODE_MCH               0x2
+#define GP_WB_ENUM_AK_RECEIVER_MODE_MCH_AD            0x3
+#define GP_WB_ENUM_AK_RECEIVER_MODE_BLE               0x4
+#define GP_WB_ENUM_AK_RECEIVER_MODE_BLE_HDR           0x5
+#define GP_WB_ENUM_AK_RECEIVER_MODE_BLE_LR            0x6
+#define GP_WB_ENUM_AK_RECEIVER_MODE_BLE_CONCURRENT    0x7
+#define GP_WB_ENUM_AK_RECEIVER_MODE_MULTISTANDARD     0x8
+#define GP_WB_ENUM_AK_RECEIVER_MODE_SFSK              0x9
+
+/* ak_zb_receiver_mode  */
+#define GP_WB_ENUM_AK_ZB_RECEIVER_MODE_LPL       0x0
+#define GP_WB_ENUM_AK_ZB_RECEIVER_MODE_LPL_AD    0x1
+#define GP_WB_ENUM_AK_ZB_RECEIVER_MODE_MCH       0x2
+#define GP_WB_ENUM_AK_ZB_RECEIVER_MODE_MCH_AD    0x3
+
+/* ak_ble_receiver_mode  */
+#define GP_WB_ENUM_AK_BLE_RECEIVER_MODE_BLE               0x0
+#define GP_WB_ENUM_AK_BLE_RECEIVER_MODE_BLE_HDR           0x1
+#define GP_WB_ENUM_AK_BLE_RECEIVER_MODE_BLE_LR            0x2
+#define GP_WB_ENUM_AK_BLE_RECEIVER_MODE_BLE_CONCURRENT    0x3
+
+/* ak_phy_mode SPONG ... this one should be replacing the transmitter_mode types */
+#define GP_WB_ENUM_AK_PHY_MODE_ZB            0x0
+#define GP_WB_ENUM_AK_PHY_MODE_BLE           0x1
+#define GP_WB_ENUM_AK_PHY_MODE_BLE_HDR       0x2
+#define GP_WB_ENUM_AK_PHY_MODE_BLE_LR125     0x3
+#define GP_WB_ENUM_AK_PHY_MODE_BLE_LR500     0x4
+#define GP_WB_ENUM_AK_PHY_MODE_SFSK          0x5
+#define GP_WB_ENUM_AK_PHY_MODE_SFSK_CODED    0x6
+
+/* ak_transmitter_mode  */
+#define GP_WB_ENUM_AK_TRANSMITTER_MODE_ZB             0x0
+#define GP_WB_ENUM_AK_TRANSMITTER_MODE_BLE            0x1
+#define GP_WB_ENUM_AK_TRANSMITTER_MODE_BLE_HDR        0x2
+#define GP_WB_ENUM_AK_TRANSMITTER_MODE_BLE_LR125      0x3
+#define GP_WB_ENUM_AK_TRANSMITTER_MODE_BLE_LR500      0x4
+#define GP_WB_ENUM_AK_TRANSMITTER_MODE_UNMODULATED    0x5
+
+/* ak_ble_transmitter_mode  */
+#define GP_WB_ENUM_AK_BLE_TRANSMITTER_MODE_BLE          0x0
+#define GP_WB_ENUM_AK_BLE_TRANSMITTER_MODE_BLE_HDR      0x1
+#define GP_WB_ENUM_AK_BLE_TRANSMITTER_MODE_BLE_LR125    0x2
+#define GP_WB_ENUM_AK_BLE_TRANSMITTER_MODE_BLE_LR500    0x3
+
+/* ak_ble_phy_mode  */
+#define GP_WB_ENUM_AK_BLE_PHY_MODE_BLE          0x0
+#define GP_WB_ENUM_AK_BLE_PHY_MODE_BLE_HDR      0x1
+#define GP_WB_ENUM_AK_BLE_PHY_MODE_BLE_LR125    0x2
+#define GP_WB_ENUM_AK_BLE_PHY_MODE_BLE_LR500    0x3
+
+/* ak_crc_mode  */
+#define GP_WB_ENUM_AK_CRC_MODE_BLE     0x0
+#define GP_WB_ENUM_AK_CRC_MODE_ZB2     0x1
+#define GP_WB_ENUM_AK_CRC_MODE_ZB4     0x2
+#define GP_WB_ENUM_AK_CRC_MODE_NONE    0x3
+
+/* ak_fe_period  */
+#define GP_WB_ENUM_AK_FE_PERIOD_MEAS_81     0x0
+#define GP_WB_ENUM_AK_FE_PERIOD_MEAS_161    0x1
+#define GP_WB_ENUM_AK_FE_PERIOD_MEAS_321    0x2
+
+/* ak_fe_sampler  */
+#define GP_WB_ENUM_AK_FE_SAMPLER_RF     0x0
+#define GP_WB_ENUM_AK_FE_SAMPLER_DIV    0x1
+#define GP_WB_ENUM_AK_FE_SAMPLER_CAL    0x2
+
+/* ak_sx_state  */
+#define GP_WB_ENUM_AK_SX_STATE_IDLE              0x0
+#define GP_WB_ENUM_AK_SX_STATE_CAL               0x1
+#define GP_WB_ENUM_AK_SX_STATE_PREP_FOR_CL       0x2
+#define GP_WB_ENUM_AK_SX_STATE_LOOP_IS_CLOSED    0x3
+
+/* ak_pll_state  */
+#define GP_WB_ENUM_AK_PLL_STATE_RESET           0x0
+#define GP_WB_ENUM_AK_PLL_STATE_FREQ_ONESHOT    0x1
+#define GP_WB_ENUM_AK_PLL_STATE_FLL_SAR         0x2
+#define GP_WB_ENUM_AK_PLL_STATE_PLL_SAR         0x3
+
+/* ak_est_trigger_mode  */
+#define GP_WB_ENUM_AK_EST_TRIGGER_MODE_ONE_SHOT    0x0
+#define GP_WB_ENUM_AK_EST_TRIGGER_MODE_RX_SLOTS    0x1
+
+/* ak_slot_start_select  */
+#define GP_WB_ENUM_AK_SLOT_START_SELECT_SLOT_START_IQ     0x0
+#define GP_WB_ENUM_AK_SLOT_START_SELECT_SLOT_START        0x1
+#define GP_WB_ENUM_AK_SLOT_START_SELECT_SLOT_START_EXT    0x2
+
+/* ak_integrator_duration  */
+#define GP_WB_ENUM_AK_INTEGRATOR_DURATION_INT_2US      0x0
+#define GP_WB_ENUM_AK_INTEGRATOR_DURATION_INT_4US      0x1
+#define GP_WB_ENUM_AK_INTEGRATOR_DURATION_INT_8US      0x2
+#define GP_WB_ENUM_AK_INTEGRATOR_DURATION_INT_12US     0x3
+#define GP_WB_ENUM_AK_INTEGRATOR_DURATION_INT_16US     0x4
+#define GP_WB_ENUM_AK_INTEGRATOR_DURATION_INT_32US     0x5
+#define GP_WB_ENUM_AK_INTEGRATOR_DURATION_INT_48US     0x6
+#define GP_WB_ENUM_AK_INTEGRATOR_DURATION_INT_64US     0x7
+#define GP_WB_ENUM_AK_INTEGRATOR_DURATION_INT_128US    0x8
+
+/* ak_supplemental_mod  */
+#define GP_WB_ENUM_AK_SUPPLEMENTAL_MOD_ZERO       0x0
+#define GP_WB_ENUM_AK_SUPPLEMENTAL_MOD_ONE        0x1
+#define GP_WB_ENUM_AK_SUPPLEMENTAL_MOD_CARRIER    0x2
+
+/* ak_phy_sequencer_triggers  */
+#define GP_WB_ENUM_AK_PHY_SEQUENCER_TRIGGERS_TO_TRAINING           0x0
+#define GP_WB_ENUM_AK_PHY_SEQUENCER_TRIGGERS_START_DATA0           0x1
+#define GP_WB_ENUM_AK_PHY_SEQUENCER_TRIGGERS_START_DATA1           0x2
+#define GP_WB_ENUM_AK_PHY_SEQUENCER_TRIGGERS_DUTY_CYCLING_START    0x3
+#define GP_WB_ENUM_AK_PHY_SEQUENCER_TRIGGERS_DUTY_CYCLING_STOP     0x4
+
+/* ak_attenuator_sel  */
+#define GP_WB_ENUM_AK_ATTENUATOR_SEL_NO_ATTENUATION      0x0
+#define GP_WB_ENUM_AK_ATTENUATOR_SEL_LOW_ATTENUATION     0x1
+#define GP_WB_ENUM_AK_ATTENUATOR_SEL_HIGH_ATTENUATION    0x2
+
+/***************************
+ * layout: ak_dbg_asic_enum
+ ***************************/
+/* ak_dbg_asic_sel  */
+#define GP_WB_ENUM_AK_DBG_ASIC_SEL_DPS_PHY_RX_SIGC0_RXI_0                    0x00
+#define GP_WB_ENUM_AK_DBG_ASIC_SEL_DPS_PHY_RX_SIGC0_RXI_1                    0x01
+#define GP_WB_ENUM_AK_DBG_ASIC_SEL_DPS_PHY_RX_SIGC0_RXQ_0                    0x02
+#define GP_WB_ENUM_AK_DBG_ASIC_SEL_DPS_PHY_RX_SIGC0_RXQ_1                    0x03
+#define GP_WB_ENUM_AK_DBG_ASIC_SEL_DPS_PHY_RX_SIGC0_RF_GAIN_0                0x04
+#define GP_WB_ENUM_AK_DBG_ASIC_SEL_DPS_PHY_RX_SIGC0_RF_GAIN_1                0x05
+#define GP_WB_ENUM_AK_DBG_ASIC_SEL_DPS_PHY_RX_SIGC0_RF_GAIN_2                0x06
+#define GP_WB_ENUM_AK_DBG_ASIC_SEL_DPS_PHY_RX_SIGC0_BB_GAIN_0                0x07
+#define GP_WB_ENUM_AK_DBG_ASIC_SEL_DPS_PHY_RX_SIGC0_BB_GAIN_1                0x08
+#define GP_WB_ENUM_AK_DBG_ASIC_SEL_DPS_PHY_RX_SIGC0_BB_GAIN_2                0x09
+#define GP_WB_ENUM_AK_DBG_ASIC_SEL_DPS_PHY_RX_SIGC0_RFDET_LEVEL_0            0x0A
+#define GP_WB_ENUM_AK_DBG_ASIC_SEL_DPS_PHY_RX_SIGC0_RFDET_LEVEL_1            0x0B
+#define GP_WB_ENUM_AK_DBG_ASIC_SEL_DPS_PHY_RX_SIGC0_ENABLE                   0x0C
+#define GP_WB_ENUM_AK_DBG_ASIC_SEL_DPS_PHY_RX_SIGC0_SLOT_START               0x0D
+#define GP_WB_ENUM_AK_DBG_ASIC_SEL_DPS_PHY_RX_SIGC0_CSF_BW_WIDE              0x0E
+#define GP_WB_ENUM_AK_DBG_ASIC_SEL_DPS_PHY_RX_SIGC1_RXI_0                    0x0F
+#define GP_WB_ENUM_AK_DBG_ASIC_SEL_DPS_PHY_RX_SIGC1_RXI_1                    0x10
+#define GP_WB_ENUM_AK_DBG_ASIC_SEL_DPS_PHY_RX_SIGC1_RXQ_0                    0x11
+#define GP_WB_ENUM_AK_DBG_ASIC_SEL_DPS_PHY_RX_SIGC1_RXQ_1                    0x12
+#define GP_WB_ENUM_AK_DBG_ASIC_SEL_DPS_PHY_RX_SIGC1_RF_GAIN_0                0x13
+#define GP_WB_ENUM_AK_DBG_ASIC_SEL_DPS_PHY_RX_SIGC1_RF_GAIN_1                0x14
+#define GP_WB_ENUM_AK_DBG_ASIC_SEL_DPS_PHY_RX_SIGC1_RF_GAIN_2                0x15
+#define GP_WB_ENUM_AK_DBG_ASIC_SEL_DPS_PHY_RX_SIGC1_BB_GAIN_0                0x16
+#define GP_WB_ENUM_AK_DBG_ASIC_SEL_DPS_PHY_RX_SIGC1_BB_GAIN_1                0x17
+#define GP_WB_ENUM_AK_DBG_ASIC_SEL_DPS_PHY_RX_SIGC1_BB_GAIN_2                0x18
+#define GP_WB_ENUM_AK_DBG_ASIC_SEL_DPS_PHY_RX_SIGC1_RFDET_LEVEL_0            0x19
+#define GP_WB_ENUM_AK_DBG_ASIC_SEL_DPS_PHY_RX_SIGC1_RFDET_LEVEL_1            0x1A
+#define GP_WB_ENUM_AK_DBG_ASIC_SEL_DPS_PHY_RX_SIGC1_ENABLE                   0x1B
+#define GP_WB_ENUM_AK_DBG_ASIC_SEL_DPS_PHY_RX_DCOC_INTEGRATOR_STATE_0_0      0x1C
+#define GP_WB_ENUM_AK_DBG_ASIC_SEL_DPS_PHY_RX_DCOC_INTEGRATOR_STATE_0_1      0x1D
+#define GP_WB_ENUM_AK_DBG_ASIC_SEL_DPS_PHY_RX_DCOC_INTEGRATOR_STATE_1_0      0x1E
+#define GP_WB_ENUM_AK_DBG_ASIC_SEL_DPS_PHY_RX_DCOC_INTEGRATOR_STATE_1_1      0x1F
+#define GP_WB_ENUM_AK_DBG_ASIC_SEL_DPS_PHY_RX_DCOC_MOV_AVG_STATE_0_0         0x20
+#define GP_WB_ENUM_AK_DBG_ASIC_SEL_DPS_PHY_RX_DCOC_MOV_AVG_STATE_0_1         0x21
+#define GP_WB_ENUM_AK_DBG_ASIC_SEL_DPS_PHY_RX_DCOC_MOV_AVG_STATE_1_0         0x22
+#define GP_WB_ENUM_AK_DBG_ASIC_SEL_DPS_PHY_RX_DCOC_MOV_AVG_STATE_1_1         0x23
+#define GP_WB_ENUM_AK_DBG_ASIC_SEL_DPS_PHY_RX_DCOC_SLOT_START_0              0x24
+#define GP_WB_ENUM_AK_DBG_ASIC_SEL_DPS_PHY_RX_DCOC_SLOT_START_1              0x25
+#define GP_WB_ENUM_AK_DBG_ASIC_SEL_DPS_PHY_RX_DCOC_TRIGGER_ESTIMATION        0x26
+#define GP_WB_ENUM_AK_DBG_ASIC_SEL_DPS_PHY_RX_DCOC_MATCHING_MOV_AVG_0_0      0x27
+#define GP_WB_ENUM_AK_DBG_ASIC_SEL_DPS_PHY_RX_DCOC_MATCHING_MOV_AVG_1_1      0x28
+#define GP_WB_ENUM_AK_DBG_ASIC_SEL_DPS_PHY_RX_DCOC_MOV_AVG_VALID_0           0x29
+#define GP_WB_ENUM_AK_DBG_ASIC_SEL_DPS_PHY_RX_DCOC_MOV_AVG_VALID_1           0x2A
+#define GP_WB_ENUM_AK_DBG_ASIC_SEL_DPS_PHY_RX_BBPRX_PREAMBLE_DET             0x2B
+#define GP_WB_ENUM_AK_DBG_ASIC_SEL_DPS_PHY_RX_BBPRX_SFD_DET                  0x2C
+#define GP_WB_ENUM_AK_DBG_ASIC_SEL_DPS_PHY_RX_BBPRX_PREAMBLE_VAL_FAIL        0x2D
+#define GP_WB_ENUM_AK_DBG_ASIC_SEL_DPS_PHY_RX_BBPRX_DATA_VAL_FAIL            0x2E
+#define GP_WB_ENUM_AK_DBG_ASIC_SEL_DPS_PHY_RX_BBPRX_BT_FS_FAIL               0x2F
+#define GP_WB_ENUM_AK_DBG_ASIC_SEL_DPS_PHY_RX_BBPRX_SFD_TIMEOUT              0x30
+#define GP_WB_ENUM_AK_DBG_ASIC_SEL_DPS_PHY_RX_BBPRX_RSSI_DET                 0x31
+#define GP_WB_ENUM_AK_DBG_ASIC_SEL_DPS_PHY_RX_BBPRX_CW_DET                   0x32
+#define GP_WB_ENUM_AK_DBG_ASIC_SEL_DPS_PHY_RX_BBPRX_PIP_DET                  0x33
+#define GP_WB_ENUM_AK_DBG_ASIC_SEL_DPS_PHY_RX_BBPRX_STREAM_OUT_BUSY          0x34
+#define GP_WB_ENUM_AK_DBG_ASIC_SEL_DPS_PHY_RX_BBPRX_STREAM_OUT_DATA_VALID    0x35
+#define GP_WB_ENUM_AK_DBG_ASIC_SEL_DPS_PHY_RX_BBPRX_PACKET_DONE              0x36
+#define GP_WB_ENUM_AK_DBG_ASIC_SEL_DPS_PHY_RX_BBPRX_PACKET_TOO_LARGE         0x37
+#define GP_WB_ENUM_AK_DBG_ASIC_SEL_DPS_PHY_RX_BBPRX_PACKET_TOO_SMALL         0x38
+#define GP_WB_ENUM_AK_DBG_ASIC_SEL_DPS_PHY_RX_BBPRX_PACKET_ABORTED           0x39
+#define GP_WB_ENUM_AK_DBG_ASIC_SEL_DPS_PHY_RX_BBPRX_RESTART_PACKET_DET       0x3A
+#define GP_WB_ENUM_AK_DBG_ASIC_SEL_DPS_PHY_RX_BBPRX_RSSI_OUT_UPDATED         0x3B
+#define GP_WB_ENUM_AK_DBG_ASIC_SEL_DPS_PHY_RX_BBPRX_RSSI_OUT_VALID           0x3C
+#define GP_WB_ENUM_AK_DBG_ASIC_SEL_DPS_PHY_RX_RTT0_PEAK_DETECTED             0x3D
+#define GP_WB_ENUM_AK_DBG_ASIC_SEL_DPS_PHY_RX_RTT0_CORRELATOR_IN_0           0x3E
+#define GP_WB_ENUM_AK_DBG_ASIC_SEL_DPS_PHY_RX_RTT0_CORRELATOR_IN_1           0x3F
+#define GP_WB_ENUM_AK_DBG_ASIC_SEL_DPS_PHY_RX_RTT0_CORRELATOR_IN_2           0x40
+#define GP_WB_ENUM_AK_DBG_ASIC_SEL_DPS_PHY_RX_RTT1_PEAK_DETECTED             0x41
+#define GP_WB_ENUM_AK_DBG_ASIC_SEL_DPS_PHY_RX_RTT1_CORRELATOR_IN_0           0x42
+#define GP_WB_ENUM_AK_DBG_ASIC_SEL_DPS_PHY_RX_RTT1_CORRELATOR_IN_1           0x43
+#define GP_WB_ENUM_AK_DBG_ASIC_SEL_DPS_PHY_RX_RTT1_CORRELATOR_IN_2           0x44
+#define GP_WB_ENUM_AK_DBG_ASIC_SEL_DPS_PHY_RX_PBR0_INT_VALID                 0x45
+#define GP_WB_ENUM_AK_DBG_ASIC_SEL_DPS_PHY_RX_PBR0_CFO_BUSY                  0x46
+#define GP_WB_ENUM_AK_DBG_ASIC_SEL_DPS_PHY_RX_PBR1_INT_VALID                 0x47
+#define GP_WB_ENUM_AK_DBG_ASIC_SEL_DPS_PHY_RX_PBR1_CFO_BUSY                  0x48
+#define GP_WB_ENUM_AK_DBG_ASIC_SEL_DPS_PHY_RX_AOA_TIME_REF                   0x49
+#define GP_WB_ENUM_AK_DBG_ASIC_SEL_DPS_PHY_RX_AOA_EOP                        0x4A
+#define GP_WB_ENUM_AK_DBG_ASIC_SEL_DPS_PHY_RX_AOA_EOP_LATE                   0x4B
+#define GP_WB_ENUM_AK_DBG_ASIC_SEL_DPS_PHY_SX_DTC_DELAY_0                    0x4C
+#define GP_WB_ENUM_AK_DBG_ASIC_SEL_DPS_PHY_SX_DTC_DELAY_1                    0x4D
+#define GP_WB_ENUM_AK_DBG_ASIC_SEL_DPS_PHY_SX_DTC_DELAY_2                    0x4E
+#define GP_WB_ENUM_AK_DBG_ASIC_SEL_DPS_PHY_SX_DTC_DELAY_3                    0x4F
+#define GP_WB_ENUM_AK_DBG_ASIC_SEL_DPS_PHY_SX_DTC_DELAY_4                    0x50
+#define GP_WB_ENUM_AK_DBG_ASIC_SEL_DPS_PHY_SX_DTC_DELAY_5                    0x51
+#define GP_WB_ENUM_AK_DBG_ASIC_SEL_DPS_PHY_SX_RFSAMPLER                      0x52
+#define GP_WB_ENUM_AK_DBG_ASIC_SEL_DPS_PHY_SX_PLL_STATE_0                    0x53
+#define GP_WB_ENUM_AK_DBG_ASIC_SEL_DPS_PHY_SX_PLL_STATE_1                    0x54
+#define GP_WB_ENUM_AK_DBG_ASIC_SEL_DPS_PHY_SX_CLOSED_LOOP                    0x55
+#define GP_WB_ENUM_AK_DBG_ASIC_SEL_DPS_PHY_SX_F_ERR_DIF_0                    0x56
+#define GP_WB_ENUM_AK_DBG_ASIC_SEL_DPS_PHY_SX_F_ERR_DIF_1                    0x57
+#define GP_WB_ENUM_AK_DBG_ASIC_SEL_DPS_PHY_SX_F_ERR_DIF_2                    0x58
+#define GP_WB_ENUM_AK_DBG_ASIC_SEL_DPS_PHY_SX_F_ERR_DIF_3                    0x59
+#define GP_WB_ENUM_AK_DBG_ASIC_SEL_DPS_PHY_SX_F_ERR_DIF_4                    0x5A
+#define GP_WB_ENUM_AK_DBG_ASIC_SEL_DPS_PHY_SX_F_ERR_DIF_5                    0x5B
+#define GP_WB_ENUM_AK_DBG_ASIC_SEL_DPS_PHY_TX_PA_ON                          0x5C
+#define GP_WB_ENUM_AK_DBG_ASIC_SEL_DPS_PHY_TX_AOA_ACTIVE                     0x5D
+#define GP_WB_ENUM_AK_DBG_ASIC_SEL_DPS_PHY_TX_MSK_0                          0x5E
+#define GP_WB_ENUM_AK_DBG_ASIC_SEL_DPS_PHY_TX_MSK_1                          0x5F
+#define GP_WB_ENUM_AK_DBG_ASIC_SEL_DPS_PHY_TX_FSK_0                          0x60
+#define GP_WB_ENUM_AK_DBG_ASIC_SEL_DPS_PHY_TX_FSK_1                          0x61
+#define GP_WB_ENUM_AK_DBG_ASIC_SEL_DPS_RTM_TRC_STATE_0                       0x62
+#define GP_WB_ENUM_AK_DBG_ASIC_SEL_DPS_RTM_TRC_STATE_1                       0x63
+#define GP_WB_ENUM_AK_DBG_ASIC_SEL_DPS_RTM_TRC_STATE_2                       0x64
+#define GP_WB_ENUM_AK_DBG_ASIC_SEL_DPS_RTM_TRC_STATE_WARMUP                  0x65
+#define GP_WB_ENUM_AK_DBG_ASIC_SEL_DPS_RTM_TRC_NEXT_STATEREQ_RDY             0x66
+#define GP_WB_ENUM_AK_DBG_ASIC_SEL_DPS_RTM_TRC_NEXT_STATEREQ_PROCESS         0x67
+#define GP_WB_ENUM_AK_DBG_ASIC_SEL_DPS_RTM_TRC_RESTART_PACKET_DET            0x68
+#define GP_WB_ENUM_AK_DBG_ASIC_SEL_DPS_RTM_TRC_FORCE_ATTENUATION_INT         0x69
+#define GP_WB_ENUM_AK_DBG_ASIC_SEL_DPS_RTM_PAR_STATE_0                       0x6A
+#define GP_WB_ENUM_AK_DBG_ASIC_SEL_DPS_RTM_PAR_STATE_1                       0x6B
+#define GP_WB_ENUM_AK_DBG_ASIC_SEL_DPS_RTM_PAR_STATE_2                       0x6C
+#define GP_WB_ENUM_AK_DBG_ASIC_SEL_DPS_RTM_PAR_PACKET_LEN_FINAL              0x6D
+#define GP_WB_ENUM_AK_DBG_ASIC_SEL_DPS_RTM_PAR_AOA_AOD_ABORT                 0x6E
+#define GP_WB_ENUM_AK_DBG_ASIC_SEL_DPS_RTM_PAR_CTE_PRESENT                   0x6F
+#define GP_WB_ENUM_AK_DBG_ASIC_SEL_DPS_RTM_PAT_STATE_0                       0x70
+#define GP_WB_ENUM_AK_DBG_ASIC_SEL_DPS_RTM_PAT_STATE_1                       0x71
+#define GP_WB_ENUM_AK_DBG_ASIC_SEL_DPS_RTM_PAT_STATE_2                       0x72
+#define GP_WB_ENUM_AK_DBG_ASIC_SEL_DPS_RTM_PAT_NEXT_BYTE                     0x73
+#define GP_WB_ENUM_AK_DBG_ASIC_SEL_EPI_DMA_SCB_AOA_AOD_RX_ANT_NOT_FULL       0x74
+#define GP_WB_ENUM_AK_DBG_ASIC_SEL_MM_WISHBONE_READ_ACCESS                   0x75
+#define GP_WB_ENUM_AK_DBG_ASIC_SEL_MM_WISHBONE_WRITE_ACCESS                  0x76
+#define GP_WB_ENUM_AK_DBG_ASIC_SEL_MM_SM_READ_ACCESS                         0x77
+#define GP_WB_ENUM_AK_DBG_ASIC_SEL_MM_SM_WRITE_ACCESS                        0x78
+#define GP_WB_ENUM_AK_DBG_ASIC_SEL_RTUC_CACHE_HIT0                           0x79
+#define GP_WB_ENUM_AK_DBG_ASIC_SEL_RTUC_CACHE_HIT1                           0x7A
+#define GP_WB_ENUM_AK_DBG_ASIC_SEL_RTUC_CACHE_MISS                           0x7B
+#define GP_WB_ENUM_AK_DBG_ASIC_SEL_RTUC_CORE_AHB_ERROR                       0x7C
+#define GP_WB_ENUM_AK_DBG_ASIC_SEL_RTUC_ASLEEP                               0x7D
+#define GP_WB_ENUM_AK_DBG_ASIC_SEL_RTUC_INDEEPSLEEP                          0x7E
+#define GP_WB_ENUM_AK_DBG_ASIC_SEL_RTUC_HALT                                 0x7F
+#define GP_WB_ENUM_AK_DBG_ASIC_SEL_RTUC_LOCKUP                               0x80
+#define GP_WB_ENUM_AK_DBG_ASIC_SEL_RTUC_LPWAIT_ACTIVE                        0x81
+
+/***************************
+ * layout: ak_rtm_enum
+ ***************************/
+/* ak_trc_state  */
+#define GP_WB_ENUM_AK_TRC_STATE_IDLE          0x0
+#define GP_WB_ENUM_AK_TRC_STATE_CAL           0x1
+#define GP_WB_ENUM_AK_TRC_STATE_TX            0x2
+#define GP_WB_ENUM_AK_TRC_STATE_RX_WD         0x3
+#define GP_WB_ENUM_AK_TRC_STATE_ED            0x4
+#define GP_WB_ENUM_AK_TRC_STATE_CCA           0x5
+#define GP_WB_ENUM_AK_TRC_STATE_OFF           0x6
+#define GP_WB_ENUM_AK_TRC_STATE_RX_ON_IDLE    0x7
+
+/* ak_trc_statereq_status  */
+#define GP_WB_ENUM_AK_TRC_STATEREQ_STATUS_SUCCESS     0x0
+#define GP_WB_ENUM_AK_TRC_STATEREQ_STATUS_TOO_LATE    0x1
+#define GP_WB_ENUM_AK_TRC_STATEREQ_STATUS_CANCELED    0x2
+
+/* ak_par_state  */
+#define GP_WB_ENUM_AK_PAR_STATE_IDLE               0x0
+#define GP_WB_ENUM_AK_PAR_STATE_DATA               0x1
+#define GP_WB_ENUM_AK_PAR_STATE_WAIT_FOR_ACCEPT    0x2
+#define GP_WB_ENUM_AK_PAR_STATE_WAIT_FOR_DONE      0x3
+#define GP_WB_ENUM_AK_PAR_STATE_DONE               0x4
+
+/* ak_pat_state  */
+#define GP_WB_ENUM_AK_PAT_STATE_IDLE           0x0
+#define GP_WB_ENUM_AK_PAT_STATE_PACKET_DATA    0x1
+#define GP_WB_ENUM_AK_PAT_STATE_FIX_ZB4_CRC    0x2
+#define GP_WB_ENUM_AK_PAT_STATE_ADD_CRC        0x3
+#define GP_WB_ENUM_AK_PAT_STATE_DONE           0x4
+
+/* ak_whitening_mode  */
+#define GP_WB_ENUM_AK_WHITENING_MODE_NONE      0x0
+#define GP_WB_ENUM_AK_WHITENING_MODE_BLE       0x1
+#define GP_WB_ENUM_AK_WHITENING_MODE_ZB_PN9    0x2
+
+#ifdef GP_DIGITAL_COEX
+/* ak_coex_packet_rx_det  */
+#define GP_WB_ENUM_AK_COEX_PACKET_RX_DET_PRE_PREAMBLE_DET    0x0
+#define GP_WB_ENUM_AK_COEX_PACKET_RX_DET_PREAMBLE_DET        0x1
+#define GP_WB_ENUM_AK_COEX_PACKET_RX_DET_PREAMBLE_DET_VAL    0x2
+#define GP_WB_ENUM_AK_COEX_PACKET_RX_DET_SFD                 0x3
+
+#endif //GP_DIGITAL_COEX
+#endif //GP_WB_AK_ENUM_H

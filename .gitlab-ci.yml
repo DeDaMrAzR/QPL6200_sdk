@@ -1,0 +1,31 @@
+pages:
+  image: python:3.11-alpine
+  variables:
+    PAGES_PREFIX: ''
+    PAGES_API_TOKEN: ''
+    PAGES_SOURCE_ARTIFACT_URL: ''
+  environment:
+    name: Pages ${PAGES_PREFIX}
+    url: ${CI_PAGES_URL}/${PAGES_PREFIX}
+  artifacts:
+    paths:
+      - public
+  pages:
+    path_prefix: ${PAGES_PREFIX}
+  script:
+    - |
+      if [ -z "$PAGES_API_TOKEN" ]; then
+        echo "ERROR: PAGES_API_TOKEN is not set"
+        exit 1
+      fi
+
+    - |
+      if [ -z "$PAGES_SOURCE_ARTIFACT_URL" ]; then
+        echo "ERROR: PAGES_SOURCE_ARTIFACT_URL is not set"
+        exit 1
+      fi
+
+    - |
+      wget --header="PRIVATE-TOKEN: $PAGES_API_TOKEN" -O artifact.zip "$PAGES_SOURCE_ARTIFACT_URL"
+      unzip -o artifact.zip
+  when: manual

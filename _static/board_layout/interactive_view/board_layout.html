@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv='content-type' content='text/html; charset=utf-8' />
+    <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge' >
+    <title>Qorvo™ IoT Carrier Board Layout</title>
+    <!-- Panzoom library: https://github.com/anvaka/panzoom -->
+    <script src='./panzoom.js'></script>
+    <script type="text/javascript" src="board_layout.js"></script>
+    <link rel="stylesheet" href="board_layout.css">
+    <script>
+        // Get URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        // Create variables from URL parameters
+        const newWindowTitle = urlParams.get('pagetitle')
+        const labelsToShow = urlParams.get('toshow').split(',');
+        const labelsToHide = urlParams.get('tohide').split(',');
+    </script>
+  </head>
+  <body>
+    <div class='zoomable'>
+        <div class="overlay">
+            <div class="svg-container" id="svgObject">
+                <!-- SO22252409 move SVG into DOM. Additionally, 'showAndHide' should be executed once it's available in DOM -->
+                <object type="image/svg+xml" data="../gp_p346_hw_20344_iot_carrier_board_pcb11.svg" onload="this.parentNode.replaceChild(this.contentDocument.documentElement, this); showAndHide(labelsToShow, labelsToHide);"></object>
+            </div>
+        </div>
+    </div>
+    <div class="menu-bar">
+        <span class="flex-max" id="titlebar">Qorvo™ IoT Carrier Board Layout</span>
+        <span class="menu-item active" onclick="toggleActive(this); toggleLayer('Component_symbols');">Component symbols</span>
+        <span class="menu-item active" onclick="toggleActive(this); toggleLayer('Silkscreen_top');">Silkscreen</span>
+        <span class="menu-item active" onclick="toggleActive(this); toggleLayer('Logos');">Logos</span>
+        <span class="menu-item active" onclick="toggleActive(this); toggleLayer('Effects');">LED on/off</span>
+        <span class="menu-item active" onclick="toggleActive(this); toggleLayer('Dimensions');">Dimensions</span>
+	    <span class="menu-item active" onclick="toggleActive(this); toggleLayer('AllMarkings');">Tags</span>
+		<span class="menu-item" onclick="toggleActive(this); toggleLayer('Pin_numbers');">Pin numbers</span>
+        <span class="menu-item active" onclick="toggleActive(this); toggleLayer('Components');">Components</span>
+ 		<span class="menu-item active" onclick="toggleActive(this); toggleLayer('Switches');">Switches</span>
+        <span class="menu-item active" onclick="toggleActive(this); toggleLayer('LEDs');">LEDs</span>
+        <span class="menu-item active" onclick="toggleActive(this); toggleLayer('Connectors');">Connectors</span>
+		<span class="menu-item active" onclick="toggleActive(this); toggleLayer('Other');">Other</span>
+	    <span class="menu-item active" onclick="toggleActive(this); toggleLayer('Pads_and_copper');">Copper</span>
+        <span class="menu-item active" onclick="toggleActive(this); toggleLayer('Vias');">Vias</span>
+        <span class="menu-item active" onclick="toggleActive(this); toggleLayer('PCB');">Background</span>
+    </div>
+    <script>
+        // Initialize Panzoom on container
+        var area = document.querySelector('.zoomable')
+        var pzinstance = panzoom(area, {
+            zoomDoubleClickSpeed: 1,
+            smoothScroll: false,
+        });
+        // executed after DOM finishes loading. WARNING: SVG onload script executes AFTER this.
+        document.addEventListener('DOMContentLoaded', function() {
+            // move the board down so it's not obscured by the menu. Hint that it's interactive using smooth movement.
+            pzinstance.smoothMoveTo(10,120);
+            pzinstance.smoothZoom(0, 0, 0.8);
+            // change document title
+            modifyWindowTitle(newWindowTitle);
+        }, false);
+    </script>
+</body>
+</html>

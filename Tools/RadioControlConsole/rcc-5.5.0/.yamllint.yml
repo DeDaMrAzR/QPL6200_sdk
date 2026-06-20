@@ -1,0 +1,19 @@
+---
+extends: default
+ignore-from-file:
+  - .gitignore
+rules:
+  braces:
+    forbid: true
+  brackets:
+    forbid: non-empty
+  comments: enable
+  comments-indentation: enable
+  document-start: enable
+  empty-values: enable
+  line-length:
+    max: 120
+  quoted-strings:
+    quote-type: single
+    required: only-when-needed
+  truthy: enable

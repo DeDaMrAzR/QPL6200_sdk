@@ -1,0 +1,7 @@
+diff a/.gitlab-ci.yml b/.gitlab-ci.yml	(rejected hunks)
+@@ -2,4 +2,4 @@
+ include:
+   - project: qorvo/tools/templates/ci-templates
+     file: /templates/python-package.yml
+-    ref: v14
++    ref: v17

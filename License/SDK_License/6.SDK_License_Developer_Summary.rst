@@ -1,0 +1,83 @@
+=====================
+**Developer Summary**
+=====================
+
+------------------------------------
+**Software Development Kit License**
+------------------------------------
+
+This summary is provided solely for your convenience as a reference tool
+to help you understand the general scope of the enclosed Software
+Development Kit License Agreement ("License Agreement").
+
+How You May Use the SDK
+-----------------------
+
+-  You may use the SDK software (with or without any modification)
+   solely to develop and distribute systems or solutions that use a
+   Qorvo device.
+
+-  You may modify the source code files, compile, and redistribute them
+   in object code form solely for use in systems or solutions containing
+   a Qorvo device.
+
+-  Unless stated otherwise in the SDK files, you may redistribute binary
+   code for the same purpose as above. All software distributions need
+   to be subject to Qorvo's pass-through license terms.
+
+-  You must keep intact all copyright notices, terms, and disclaimers
+   existing in the software and materials.
+
+-  Newly compiled or redistributed materials of Qorvo software must
+   contain this notice
+
+"Copyright (c) 2017-2025, Qorvo US, Inc. All rights reserved." in
+addition to any notice or disclaimer that may be contained in the code
+header.
+
+-  Use of third party and open-source materials contained in the SDK are
+   subject to the pass-through terms and conditions of the respective
+   third party and/or open source license.
+
+How You May Not Use the SDK
+---------------------------
+
+-  You may not reverse engineer, decompile, or attempt to gain access to
+   the source code of any file distributed in binary or object code
+   form.
+
+-  You may not use the SDK software with any integrated circuit device
+   or microchip other than one which has been designed and provided by
+   Qorvo.
+
+-  You may not modify any non open-source portions of the SDK in a way
+   that subjects it to an open source license.
+
+-  You may not use Qorvo's identity or trademarks to endorse or promote
+   products derived from the SDK software unless you have Qorvo's
+   written permission.
+
+-  You may not use the SDK software for any other purpose not described
+   herein.
+
+What Qorvo Does Not Provide with the SDK
+----------------------------------------
+
+-  Qorvo does not provide any kind of warranty or guarantee whatsoever
+   as to any aspect of the SDK software. All SDK software is provided
+   as-is and is used at your own risk.
+
+-  Qorvo does not provide technical support with the SDK.
+
+-  Qorvo is not liable for any kind of damages or losses occurring from
+   your use of the SDK.
+
+Important Notice
+----------------
+
+This summary is not a legally binding document, does not replace or
+modify the License Agreement, and is not a substitute for reading the
+License Agreement. You still must read and agree to the License
+Agreement before using the SDK. In the event of any conflict between
+this summary and the License Agreement, the terms of the License
+Agreement will be controlling.

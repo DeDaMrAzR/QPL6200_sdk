@@ -1,0 +1,14 @@
+/* Change content container width to match browser window */
+.wy-nav-content {
+    padding: 1.618em 3.236em;
+    height: 100%;
+    max-width: none;
+    margin: auto;
+}
+
+/* Remove serifs from header fonts for better readability and consistent look */
+.rst-content .toctree-wrapper>p.caption,h1,h2,h3,h4,h5,h6,legend {
+    margin-top: 0;
+    font-weight: 700;
+    font-family: Lato,proxima-nova,Helvetica Neue,Arial,sans-serif
+}

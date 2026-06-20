@@ -1,0 +1,68 @@
+#Generated from:
+# $(BASEDIR)/../../../Libraries/Qorvo/FactoryBlock/qpg6200.py
+
+SHELL = /bin/bash
+
+ROOTDIR?=$(BASEDIR)/../../..
+ifndef BASEDIR
+BASEDIR:=$(abspath $(dir $(abspath $(lastword $(MAKEFILE_LIST)))))
+endif
+QPG_SDK_ROOT_PATH ?= $(BASEDIR)/../../../Applications/P334_GP695_DK
+WORKDIR ?= $(BASEDIR)/../../../Work/FactoryBlock_qpg6200_MotionSensor
+
+
+TOOLCHAIN ?= /usr
+ifeq (,$(TOOLCHAIN))
+# Will use the path variable to find the compiler
+Q_TOOLCHAIN_PREFIX=
+else
+# Use an absolute path, add bin, path separator
+Q_TOOLCHAIN_PREFIX= $(TOOLCHAIN)/bin/
+endif
+OBJCOPY ?= $(Q_TOOLCHAIN_PREFIX)arm-none-eabi-objcopy -B armv7e-m
+AR ?= $(Q_TOOLCHAIN_PREFIX)arm-none-eabi-ar
+
+
+XML_FILE = $(BASEDIR)/../../../Libraries/Qorvo/FactoryBlock/MotionSensor.fb.xml
+ifeq ("$(wildcard $(XML_FILE))","")
+$(error $(XML_FILE) config file does not exist!)
+endif
+
+
+UBISYS_TOOL_PATH ?= $(BASEDIR)/../../../Tools/DataBlock
+
+BUILD_TOOL ?= $(UBISYS_TOOL_PATH)/fbbuild
+INSTALL_CODE ?= $(BASEDIR)/../../../Tools/DataBlock/install_code.py
+INSTALL_CODE_FILE = $(BASEDIR)/../../../Libraries/Qorvo/PersistentStorageBlock/MotionSensor.psb.xml
+
+
+APP_TARGET := FactoryBlock_qpg6200_MotionSensor
+
+
+.PHONY:all
+all: $(APP_TARGET).hex
+
+.PRECIOUS: $(APP_TARGET)_gen.hex
+$(APP_TARGET)_gen.hex:
+	set -x && \
+    export QPG_SDK_ROOT=$(QPG_SDK_ROOT_PATH) && \
+	mkdir -p $(WORKDIR) && \
+	cd $(WORKDIR) && \
+    $(BUILD_TOOL) $(XML_FILE) && \
+    mv $(basename $(notdir $(XML_FILE))).hex $@
+
+
+.PRECIOUS: $(APP_TARGET).hex
+$(APP_TARGET).hex: $(APP_TARGET)_gen.hex
+	set -x && \
+	cd $(WORKDIR) && \
+    python3 $(INSTALL_CODE) \
+        $(INSTALL_CODE_FILE) $(APP_TARGET)_gen.hex $(APP_TARGET).hex && \
+    rm $(APP_TARGET)_gen.hex
+
+
+export_prerequisites: $(APP_TARGET).hex
+
+.PHONY:clean
+clean:
+	-rm -r $(WORKDIR)

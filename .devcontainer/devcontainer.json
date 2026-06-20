@@ -1,0 +1,8 @@
+{
+    "name": "IOT SDK Dev Container: prebuilt image",
+    "image": "registry.gitlab.com/qorvo_sdk/public/devkits/qpg6200-iot-sdk:2.0.1",
+    "remoteUser": "devcontaineruser",
+    "onCreateCommand": [
+        "Scripts/setup_submodules.sh"
+    ]
+}

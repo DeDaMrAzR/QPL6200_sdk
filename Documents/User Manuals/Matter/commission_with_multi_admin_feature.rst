@@ -1,0 +1,98 @@
+Use the Matter multi-admin feature with a Qorvo Matter™ end device with the Apple Home and Google Home ecosystems.
+==================================================================================================================
+
+What does multi-admin mean in context of Matter
+-----------------------------------------------
+
+The CSA created a
+`video <https://csa-iot.org/developer-resource/matter-multi-admin-video/>`__
+to introduce the multi-admin concept in Matter™ applications.
+
+Multi-admin enables users to control a device via different ecosystems
+simultaneously. Once the first ecosystem uses their commissioner to
+commission a device, it has the capability to share it. The device's
+commissioning window can be opened again towards another ecosystems'
+commissioner. Each commissioned ecosystem will reserve at least one of
+the fabrics on the device. As these reservations take up resources,
+there will be a limit on how many ecosystems and fabrics can be
+supported for each device.
+
+Once the commissioning window is opened on the specific the device, it
+can be commissioned in another ecosystem. Matter v1.0 is enforcing at
+least 5 fabrics to be supported on each device that gets certified for
+this version of the Matter specification.
+
+In this guide, step by step instructions are given to commission a
+Matter device onto the Matter network using 2 different ecosystems
+(Google and Apple) of the Qorvo Matter Light device.
+
+Features demonstrated in this guide are:
+
+1. `Prerequisites to get started with
+   multi-admin <#step-1-prerequisites-to-get-started-with-multi-admin>`__
+2. `Share a Matter device between
+   ecosystems <#step-2-share-a-matter-device-between-ecosystems>`__
+
+Step 1: Prerequisites to get started with multi-admin
+-----------------------------------------------------
+
+In order to start with multi-admin commissioning, the individual fabrics
+used in this guide should be able to commission. So first make sure you
+are able to commissioning single fabric with Apple and Google as done in
+below guides:
+
+- :doc:`Commissioning with Apple <./commissioning_with_apple>`
+- :doc:`Commissioning with Google <./commissioning_with_google>`
+
+When both ecosystems are working as a single fabric, go to the next step
+to get started with the Matter multi-admin feature on the Qorvo Matter
+Light device.
+
+Step 2: Share a Matter device between ecosystems
+------------------------------------------------
+
+Assuming the order in `step
+1 <#step-1-prerequisites-to-get-started-with-multi-admin>`__ was
+followed, Google should now be the single fabric used on the device.
+Follow the steps below to validate the multi-admin feature.
+
+Share a Matter device from the Google Home to the Apple Home ecosystem.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+1. Make sure the device is commissioned in the Google ecosystem as
+   described in
+   :doc:`Commissioning with Google <./commissioning_with_google>`
+2. Make sure the Google Nest Hub 2nd generation and Android Tablet are
+   in the same network as the Apple HomePod mini and iPad.
+3. On the Android tablet open the Home App. Perform a long press on the
+   tile to open the light controls. Next click on settings (gear symbol)
+   > Linked Matter apps & services > Link apps & services > Share with
+   QR code. This will display a QR code and the commissioning window is
+   opened for another ecosystem to commission it.
+4. :doc:`Use the iPad or iPhone to add an accessory <./commissioning_with_apple>`
+   using the QR code
+   displayed by the previous step.
+5. You should now be able to control the device with both the Apple Home
+   and Google Home ecosystems.
+
+Share a Matter device from the Apple Home to the Google Home ecosystem.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   **WARNING:** This section is not working yet with the Google
+   Ecosystem.
+
+1. Make sure the device is commissioned in the Apple ecosystem as
+   described in :doc:`Commissioning with Apple <./commissioning_with_apple>`.
+2. Make sure the Google Nest Hub 2nd generation and Android Tablet are
+   in the same network as the Apple HomePod mini and iPad.
+3. On the iPad or iPhone and open the Apple Home App. Perform a long
+   press on the tile to of the light device to open the option window.
+   Next click on Accessory Details (gear symbol) > click the next gear
+   symbol to get advanced settings > Scroll down and select *Turn On
+   Pairing Mode*. This will display a setup code and the commissioning
+   window is opened for another ecosystem to commission it.
+4. :doc:`Use the iPad or iPhone to add an accessory <./commissioning_with_apple>`
+   using the original QR code of the
+   device or the setup code indicated in the previous step.
+5. You should now be able to control the device with both the Apple
+   Home and Google Home ecosystems.

@@ -1,0 +1,177 @@
+[project]
+name = "rcc"
+authors = [
+    { name = "Ricardo Marchesan", email = "ricardo.marchesan@qorvo.com"}
+]
+description = "Radio Control Console"
+readme = "README.md"
+requires-python = ">=3.10"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+dynamic = ["version"]
+dependencies = [
+    "click ~= 8.1.6",
+    "lxml >= 4.6.2",
+    "pynput >= 1.7.3",
+    "six >= 1.16.0",
+    "pyserial >= 3.5.0",
+    "pynput >= 1.7.6",
+    "tabulate >= 0.9.0",
+
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest==7.4.2",
+  "pytest-dotenv==0.5.2",
+  "pytest-mock==3.12.0",
+  "pytest-cov==4.1.0",
+  "linter-conventional-commit==2.1.0",
+  "pylint==3.0.1",
+  "mypy==1.6.1",
+  "mypy-extensions==1.0.0",
+  "pre-commit==3.5.0",
+  "build==1.0.3",
+  "types-click==7.1.8",
+  "types-six==1.16.21.20240311",
+  "lxml-stubs==0.5.1",
+  "types-pyserial==3.5.0.20240311",
+  "ruff==0.2.1",
+  "ruff-lsp==0.0.52",
+  "yamllint==1.34.0",
+  "bandit==1.7.5",
+  "shellcheck-py==0.10.0.1"
+]
+
+[project.urls]
+"Homepage" = "https://gitlab.com/qorvo/tools/packages/rcc"
+
+[project.scripts]
+rcc = "qorvo.rcc.cli.shell:main"
+rcc-log-watch = "qorvo.rcc.cli.logwatch:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.version]
+path = "qorvo/rcc/__init__.py"
+
+[tool.coverage.report]
+exclude_also = [
+  "def __repr__",
+  "if self.debug:",
+  "if settings.DEBUG",
+  "raise AssertionError",
+  "raise NotImplementedError",
+  "if 0:",
+  "if __name__ == .__main__.:",
+  "if TYPE_CHECKING:",
+  "@(abc\\.)?abstractmethod",
+]
+
+[tool.ruff]
+# Exclude a variety of commonly ignored directories.
+exclude = [
+  ".bzr",
+  ".direnv",
+  ".eggs",
+  ".git",
+  ".git-rewrite",
+  ".hg",
+  ".ipynb_checkpoints",
+  ".mypy_cache",
+  ".nox",
+  ".pants.d",
+  ".pyenv",
+  ".pytest_cache",
+  ".pytype",
+  ".ruff_cache",
+  ".svn",
+  ".tox",
+  ".venv",
+  ".vscode",
+  "__pypackages__",
+  "_build",
+  "buck-out",
+  "build",
+  "dist",
+  "node_modules",
+  "site-packages",
+  "venv",
+]
+
+line-length = 120
+indent-width = 4
+
+# Assume Python 3.10
+target-version = "py310"
+
+[tool.ruff.lint]
+# Enable Pyflakes (`F`) and a subset of the pycodestyle (`E`)  codes by default.
+select = ["E4", "E7", "E9", "F"]
+ignore = []
+
+# Allow fix for all enabled rules (when `--fix`) is provided.
+fixable = ["ALL"]
+unfixable = []
+
+# Allow unused variables when underscore-prefixed.
+dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
+
+[tool.ruff.format]
+# Like Black, use double quotes for strings.
+quote-style = "double"
+
+# Like Black, indent with spaces, rather than tabs.
+indent-style = "space"
+
+# Like Black, respect magic trailing commas.
+skip-magic-trailing-comma = false
+
+# Like Black, automatically detect the appropriate line ending.
+line-ending = "auto"
+
+[tool.mypy]
+# Keep track of https://github.com/python/mypy/issues/12505
+exclude = ["^test", "^venv", "^hardwaretests"]
+strict = true
+ignore_missing_imports = true
+follow_imports = "skip"
+explicit_package_bases = true
+disallow_subclassing_any = false
+
+[tool.pylint.MASTER]
+ignore-paths = ['test', 'docs']
+
+[tool.pylint.FORMAT]
+max-line-length = 120
+
+[tool.pylint.DESIGN]
+max-attributes = 12
+
+[tool.pylint."MESSAGES CONTROL"]
+disable = """missing-module-docstring,
+  missing-class-docstring,
+  missing-function-docstring,
+  logging-fstring-interpolation
+"""
+
+[tool.pylint.REPORTS]
+output-format = "colorized"
+score = "no"
+
+[tool.pylint.typecheck]
+signature-mutators = [
+  "click.decorators.option",
+  "click.decorators.argument",
+  "click.decorators.version_option",
+  "click.decorators.help_option",
+  "click.decorators.pass_context",
+  "click.decorators.confirmation_option"
+]
+
+[tool.bandit]
+exclude_dirs = ["venv", "test", "docs", "qorvo/rcc/", "hardwaretests"]
