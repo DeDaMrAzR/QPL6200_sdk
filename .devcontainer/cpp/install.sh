@@ -6,7 +6,7 @@ INSTALL_PATH_ZEPHYR_SDK=/opt/zephyr
 INSTALL_PATH_RISC=/opt/gcc
 
 export DEBIAN_FRONTEND=noninteractive
-export CI_API_TOKEN=glpat-G6oE9YDSXu17auSgh-R6
+export CI_API_TOKEN=REDACTED
 
 OS_ID=$(awk -F "=" '/^ID=/ {print $2}' /etc/os-release)
 OS_CODENAME=$(awk -F "=" '/^VERSION_CODENAME=/ {print $2}' /etc/os-release)
